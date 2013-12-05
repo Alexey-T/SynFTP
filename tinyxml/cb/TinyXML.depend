@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1270490441 source:d:\programming\projects\npp\plugin\nppftp\tinyxml\src\tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1270490441 d:\programming\projects\npp\plugin\nppftp\tinyxml\include\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1270490441 d:\programming\projects\npp\plugin\nppftp\tinyxml\include\tinystr.h
+	<assert.h>
+	<string.h>
+
+1270490441 source:d:\programming\projects\npp\plugin\nppftp\tinyxml\src\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1270490441 source:d:\programming\projects\npp\plugin\nppftp\tinyxml\src\tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1270490441 source:d:\programming\projects\npp\plugin\nppftp\tinyxml\src\tinystr.cpp
+	"tinystr.h"
+

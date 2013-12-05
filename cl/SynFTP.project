@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="SynFTP" InternalType="Library">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00020001N0005Debug0000000000000001N0007Release000000000000]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="src">
+    <File Name="../src/DragDropSupport.cpp"/>
+    <File Name="../src/Encryption.cpp"/>
+    <File Name="../src/FileObject.cpp"/>
+    <File Name="../src/FTPCache.cpp"/>
+    <File Name="../src/FTPClientWrapper.cpp"/>
+    <File Name="../src/FTPClientWrapperSSH.cpp"/>
+    <File Name="../src/FTPClientWrapperSSL.cpp"/>
+    <File Name="../src/FTPProfile.cpp"/>
+    <File Name="../src/FTPQueue.cpp"/>
+    <File Name="../src/FTPSession.cpp"/>
+    <File Name="../src/Monitor.cpp"/>
+    <File Name="../src/SynFTP.cpp"/>
+    <File Name="../src/Output.cpp"/>
+    <File Name="../src/PathUtils.cpp"/>
+    <File Name="../src/PluginInterface.cpp"/>
+    <File Name="../src/ProgressMonitor.cpp"/>
+    <File Name="../src/QueueOperation.cpp"/>
+    <File Name="../src/RefObject.cpp"/>
+    <File Name="../src/SSLCertificates.cpp"/>
+    <File Name="../src/StringUtils.cpp"/>
+    <File Name="../src/WinPlatform.cpp"/>
+    <File Name="../src/Windows/AboutDialog.cpp"/>
+    <File Name="../src/Windows/ChildDialog.cpp"/>
+    <File Name="../src/Windows/Dialog.cpp"/>
+    <File Name="../src/Windows/DragDropWindow.cpp"/>
+    <File Name="../src/Windows/FTPWindow.cpp"/>
+    <File Name="../src/Windows/InputDialog.cpp"/>
+    <File Name="../src/Windows/KBIntDialog.cpp"/>
+    <File Name="../src/Windows/MessageDialog.cpp"/>
+    <File Name="../src/Windows/SynFTP.rc"/>
+    <File Name="../src/Windows/ProfilesDialog.cpp"/>
+    <File Name="../src/Windows/QueueWindow.cpp"/>
+    <File Name="../src/Windows/SettingsDialog.cpp"/>
+    <File Name="../src/Windows/Toolbar.cpp"/>
+    <File Name="../src/Windows/Treeview.cpp"/>
+    <File Name="../src/Windows/Window.cpp"/>
+    <File Name="../src/FTPSettings.cpp"/>
+    <File Name="../src/OutputLog.cpp"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="include"/>
+  <VirtualDirectory Name="Windows">
+    <File Name="../include/synftp/Windows/AboutDialog.h"/>
+    <File Name="../include/synftp/Windows/ChildDialog.h"/>
+    <File Name="../include/synftp/Windows/Commands.h"/>
+    <File Name="../include/synftp/Windows/Dialog.h"/>
+    <File Name="../include/synftp/Windows/DragDropWindow.h"/>
+    <File Name="../include/synftp/Windows/FTPWindow.h"/>
+    <File Name="../include/synftp/Windows/InputDialog.h"/>
+    <File Name="../include/synftp/Windows/KBIntDialog.h"/>
+    <File Name="../include/synftp/Windows/MessageDialog.h"/>
+    <File Name="../include/synftp/Windows/ProfilesDialog.h"/>
+    <File Name="../include/synftp/Windows/QueueWindow.h"/>
+    <File Name="../include/synftp/Windows/resource.h"/>
+    <File Name="../include/synftp/Windows/SettingsDialog.h"/>
+    <File Name="../include/synftp/Windows/symbols.h"/>
+    <File Name="../include/synftp/Windows/symbolsA.h"/>
+    <File Name="../include/synftp/Windows/symbolsU.h"/>
+    <File Name="../include/synftp/Windows/Toolbar.h"/>
+    <File Name="../include/synftp/Windows/Treeview.h"/>
+    <File Name="../include/synftp/Windows/Window.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="synftp">
+    <File Name="../include/synftp/DragDropSupport.h"/>
+    <File Name="../include/synftp/Encryption.h"/>
+    <File Name="../include/synftp/FileObject.h"/>
+    <File Name="../include/synftp/FTPCache.h"/>
+    <File Name="../include/synftp/FTPClientWrapper.h"/>
+    <File Name="../include/synftp/FTPFile.h"/>
+    <File Name="../include/synftp/FTPProfile.h"/>
+    <File Name="../include/synftp/FTPQueue.h"/>
+    <File Name="../include/synftp/FTPSession.h"/>
+    <File Name="../include/synftp/Monitor.h"/>
+    <File Name="../include/synftp/SynFTP.h"/>
+    <File Name="../include/synftp/Output.h"/>
+    <File Name="../include/synftp/PathUtils.h"/>
+    <File Name="../include/synftp/ProgressMonitor.h"/>
+    <File Name="../include/synftp/QueueOperation.h"/>
+    <File Name="../include/synftp/RefObject.h"/>
+    <File Name="../include/synftp/SSLCertificates.h"/>
+    <File Name="../include/synftp/StdInc.h"/>
+    <File Name="../include/synftp/StringUtils.h"/>
+    <File Name="../include/synftp/WinPlatform.h"/>
+    <File Name="../include/synftp/OutputLog.h"/>
+    <File Name="../include/synftp/FTPSettings.h"/>
+    <File Name="../include/synftp/PluginInterface.h"/>
+  </VirtualDirectory>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g" C_Options="-g" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="."/>
+        <IncludePath Value="../include"/>
+        <IncludePath Value="../include/synftp"/>
+        <IncludePath Value="../include/synftp/Windows"/>
+        <IncludePath Value="../tinyxml/include"/>
+        <IncludePath Value="../utcp/include"/>
+        <IncludePath Value="../libssh-0.4.4/include"/>
+        <Preprocessor Value="UNICODE"/>
+        <Preprocessor Value="_UNICODE"/>
+        <Preprocessor Value="LIBSSH_STATIC"/>
+      </Compiler>
+      <Linker Options="../src/SynFTP.def" Required="yes">
+        <LibraryPath Value="../lib"/>
+        <Library Value="Comdlg32"/>
+        <Library Value="Comctl32"/>
+        <Library Value="uuid"/>
+        <Library Value="ole32"/>
+        <Library Value="shlwapi"/>
+        <Library Value="TinyXML"/>
+        <Library Value="UTCP"/>
+        <Library Value="ssh"/>
+        <Library Value="ssl"/>
+        <Library Value="crypto"/>
+        <Library Value="zlibD"/>
+        <Library Value="gdi32"/>
+        <Library Value="ws2_32"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="yes">
+        <IncludePath Value="..\include\synftp\Windows"/>
+      </ResourceCompiler>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName).dll" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
+        <PostConnectCommands/>
+        <StartupCommands>file Debug/Syn.exe
+add-symbol-file Debug/Plugins/SynFTP.dll</StartupCommands>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
+        <IncludePath Value="."/>
+        <IncludePath Value="../include"/>
+        <IncludePath Value="../include/synftp"/>
+        <IncludePath Value="../include/synftp/Windows"/>
+        <IncludePath Value="../tinyxml/include"/>
+        <IncludePath Value="../UTCP/Include"/>
+        <IncludePath Value="../libssh-0.4.4/include"/>
+        <Preprocessor Value="UNICODE"/>
+        <Preprocessor Value="_UNICODE"/>
+        <Preprocessor Value="LIBSSH_STATIC"/>
+      </Compiler>
+      <Linker Options="-O2 ../src/SynFTP.def" Required="yes">
+        <LibraryPath Value="../lib/"/>
+        <Library Value="Comdlg32"/>
+        <Library Value="Comctl32"/>
+        <Library Value="uuid"/>
+        <Library Value="ole32"/>
+        <Library Value="shlwapi"/>
+        <Library Value="TinyXML"/>
+        <Library Value="UTCP"/>
+        <Library Value="ssh"/>
+        <Library Value="ssl"/>
+        <Library Value="crypto"/>
+        <Library Value="zlib"/>
+        <Library Value="gdi32"/>
+        <Library Value="ws2_32"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="yes">
+        <IncludePath Value="..\include\synftp\Windows"/>
+      </ResourceCompiler>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName).dll" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="">
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

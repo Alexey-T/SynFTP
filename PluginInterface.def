@@ -1,0 +1,6 @@
+LIBRARY   SYNPLUGIN
+EXPORTS
+   SynInit @1
+   SynOpenForm @2
+   SynCloseForm @3
+   SynAction @4

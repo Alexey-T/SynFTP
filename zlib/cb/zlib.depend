@@ -1,0 +1,133 @@
+# depslib dependency file v1.0
+1186377414 source:d:\programming\projects\npp\plugin\nppftp\zlib\adler32.c
+	"zutil.h"
+
+1268583884 d:\programming\projects\npp\plugin\nppftp\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1268583812 d:\programming\projects\npp\plugin\nppftp\zlib\zlib.h
+	"zconf.h"
+
+1266791904 d:\programming\projects\npp\plugin\nppftp\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+	<sys/types.h>
+
+1134325652 source:d:\programming\projects\npp\plugin\nppftp\zlib\compress.c
+	"zlib.h"
+
+1177291532 source:d:\programming\projects\npp\plugin\nppftp\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1041785614 d:\programming\projects\npp\plugin\nppftp\zlib\crc32.h
+
+1267290446 source:d:\programming\projects\npp\plugin\nppftp\zlib\deflate.c
+	"deflate.h"
+
+1267290388 d:\programming\projects\npp\plugin\nppftp\zlib\deflate.h
+	"zutil.h"
+
+1155738064 source:d:\programming\projects\npp\plugin\nppftp\zlib\example.c
+	"zlib.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1266106368 source:d:\programming\projects\npp\plugin\nppftp\zlib\gzclose.c
+	"gzguts.h"
+
+1268583832 d:\programming\projects\npp\plugin\nppftp\zlib\gzguts.h
+	<stdio.h>
+	"zlib.h"
+	<string.h>
+	<stdlib.h>
+	<limits.h>
+	<fcntl.h>
+	<io.h>
+	<windows.h>
+	<errno.h>
+
+1268077732 source:d:\programming\projects\npp\plugin\nppftp\zlib\gzlib.c
+	"gzguts.h"
+
+1268077864 source:d:\programming\projects\npp\plugin\nppftp\zlib\gzread.c
+	"gzguts.h"
+
+1268447246 source:d:\programming\projects\npp\plugin\nppftp\zlib\gzwrite.c
+	"gzguts.h"
+	<stdarg.h>
+
+1261787680 source:d:\programming\projects\npp\plugin\nppftp\zlib\infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1203289374 d:\programming\projects\npp\plugin\nppftp\zlib\inftrees.h
+
+1261787528 d:\programming\projects\npp\plugin\nppftp\zlib\inflate.h
+
+1041443180 d:\programming\projects\npp\plugin\nppftp\zlib\inffast.h
+
+1038181498 d:\programming\projects\npp\plugin\nppftp\zlib\inffixed.h
+
+1261787644 source:d:\programming\projects\npp\plugin\nppftp\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1264321636 source:d:\programming\projects\npp\plugin\nppftp\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1268615398 source:d:\programming\projects\npp\plugin\nppftp\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1266943336 source:d:\programming\projects\npp\plugin\nppftp\zlib\minigzip.c
+	"zlib.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<sys/types.h>
+	<sys/mman.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<io.h>
+	<unix.h>
+	<windows.h>
+
+1267290290 source:d:\programming\projects\npp\plugin\nppftp\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+888322496 d:\programming\projects\npp\plugin\nppftp\zlib\trees.h
+
+1263749662 source:d:\programming\projects\npp\plugin\nppftp\zlib\uncompr.c
+	"zlib.h"
+
+1263072230 source:d:\programming\projects\npp\plugin\nppftp\zlib\zutil.c
+	"zutil.h"
+

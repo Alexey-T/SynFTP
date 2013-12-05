@@ -1,0 +1,256 @@
+/*
+    SynFTP: FTP/SFTP functionality for SynWrite
+    Copyright (C) 2010  Harry (harrybharry@users.sourceforge.net)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#include <windows.h>
+#include <commctrl.h>
+#include "resource.h"
+#include "symbols.h"
+
+//
+// Icon resources
+//
+IDI_ICON_FOLDERS   ICON           "bitmaps\\icon_folder.ico"
+IDI_ICON_MESSAGES  ICON           "bitmaps\\icon_messages.ico"
+
+//
+// Bitmap resources
+//
+IDB_BITMAP_ABORT   BITMAP         "bitmaps\\toolbar_abort.bmp"
+IDB_BITMAP_CONNECT BITMAP         "bitmaps\\toolbar_connected.bmp"
+IDB_BITMAP_DISCONNECT BITMAP      "bitmaps\\toolbar_disconnected.bmp"
+IDB_BITMAP_DOWNLOAD BITMAP        "bitmaps\\toolbar_download.bmp"
+IDB_BITMAP_FOLDERS BITMAP         "bitmaps\\maintoolbar_folder.bmp"
+IDB_BITMAP_MESSAGES BITMAP        "bitmaps\\toolbar_messages.bmp"
+IDB_BITMAP_RAWCOMMAND BITMAP      "bitmaps\\toolbar_rawcommand.bmp"
+IDB_BITMAP_REFRESH BITMAP         "bitmaps\\toolbar_refresh.bmp"
+IDB_BITMAP_SETTINGS BITMAP        "bitmaps\\toolbar_settings.bmp"
+IDB_BITMAP_TREEICONS BITMAP       "bitmaps\\icons_treeview.bmp"
+IDB_BITMAP_TREEICONS_MASK BITMAP  "bitmaps\\icons_treeview_mask.bmp"
+IDB_BITMAP_UPLOAD  BITMAP         "bitmaps\\toolbar_upload.bmp"
+IDB_BITMAP_PAYPAL  BITMAP         "bitmaps\\pp_favicon_x.bmp"
+
+//
+// Dialog resources
+//
+IDD_DIALOG_PROFILES DIALOGEX 0, 0, 350, 244
+STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_SYSMENU
+CAPTION "Profile settings"
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    LTEXT           "Profiles:", IDC_STATIC, 12, 4, 27, 8, SS_LEFT
+    LISTBOX         IDC_LIST_PROFILES, 16, 16, 108, 188, WS_TABSTOP | WS_VSCROLL | LBS_NOINTEGRALHEIGHT | LBS_NOTIFY
+    PUSHBUTTON      "Add new", IDC_BUTTON_PROFILE_ADD, 16, 208, 36, 14
+    PUSHBUTTON      "Rename", IDC_BUTTON_PROFILE_RENAME, 56, 208, 36, 14, WS_DISABLED
+    PUSHBUTTON      "Copy", IDC_BUTTON_PROFILE_COPY, 96, 208, 28, 14, WS_DISABLED
+    PUSHBUTTON      "Delete", IDC_BUTTON_PROFILE_DELETE, 96, 224, 28, 14, WS_DISABLED
+    CONTROL         "", IDC_TAB_PROFILEPAGE, WC_TABCONTROL, 0, 136, 4, 210, 220
+    DEFPUSHBUTTON   "Close", IDC_BUTTON_CLOSE, 300, 228, 44, 14
+END
+
+IDD_DIALOG_PROFILESCONNECTION DIALOGEX 4, 20, 200, 192
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | DS_CONTROL
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    LTEXT           "Hostname:", IDC_STATIC, 4, 4, 36, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_HOSTNAME, 8, 12, 78, 14, ES_AUTOHSCROLL
+    LTEXT           "Connection type:", IDC_STATIC, 96, 4, 56, 8, SS_LEFT
+    COMBOBOX        IDC_COMBO_SECURITY, 100, 12, 68, 30, WS_TABSTOP | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Port:", IDC_STATIC, 4, 32, 17, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PORT, 8, 40, 36, 14, ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Username:", IDC_STATIC, 4, 60, 36, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_USERNAME, 8, 68, 78, 14, ES_AUTOHSCROLL
+    LTEXT           "Password:", IDC_STATIC, 4, 88, 34, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PASSWORD, 8, 96, 78, 14, ES_AUTOHSCROLL | ES_PASSWORD
+    AUTOCHECKBOX    "Ask for password", IDC_CHECK_ASKPASSWORD, 94, 96, 80, 8
+    LTEXT           "Timeout (seconds):", IDC_STATIC, 4, 120, 62, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_TIMEOUT, 8, 128, 36, 14, ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Initial remote directory:", IDC_STATIC, 4, 152, 80, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_INITDIR, 8, 160, 140, 14, ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_PROFILESAUTHENTICATION DIALOGEX 4, 20, 200, 192
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | DS_CONTROL
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    AUTOCHECKBOX    "Try private key file authentication", IDC_CHECK_KEY, 4, 4, 124, 8
+    AUTOCHECKBOX    "Try password authentication", IDC_CHECK_PASSWORD, 4, 16, 107, 10
+    AUTOCHECKBOX    "Try keyboard interactive authentication", IDC_CHECK_INTERACTIVE, 4, 28, 143, 10
+    LTEXT           "Private key file:", IDC_STATIC, 4, 48, 51, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_KEYFILE, 8, 56, 160, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "...", IDC_BUTTON_KEYBROWSE, 172, 56, 13, 14
+    LTEXT           "Passphrase:", IDC_STATIC, 4, 76, 40, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PASSPHRASE, 8, 84, 84, 14, ES_AUTOHSCROLL | ES_PASSWORD
+    //AUTOCHECKBOX    "Use agent", IDC_CHECK_AGENT, 4, 72, 49, 10, BS_AUTOCHECKBOX
+END
+
+IDD_DIALOG_PROFILESTRANSFERS DIALOGEX 4, 20, 200, 192
+STYLE DS_3DLOOK | DS_CONTROL | DS_SHELLFONT | WS_CHILDWINDOW
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    GROUPBOX        "Connection mode", IDC_STATIC, 4, 4, 72, 44
+    RADIOBUTTON     "Active", IDC_RADIO_ACTIVE, 8, 20, 36, 10, WS_GROUP
+    RADIOBUTTON     "Passive", IDC_RADIO_PASSIVE, 8, 32, 40, 10
+    GROUPBOX        "Transfer mode", IDC_STATIC, 88, 4, 72, 44
+    RADIOBUTTON     "ASCII", IDC_RADIO_ASCII, 92, 20, 35, 10, WS_GROUP
+    RADIOBUTTON     "Binary", IDC_RADIO_BINARY, 92, 32, 36, 10
+    LTEXT           "ASCII types:", IDC_STATIC, 4, 56, 42, 8, SS_LEFT
+    LISTBOX         IDC_LIST_ASCII, 4, 68, 76, 51, WS_TABSTOP | WS_VSCROLL | LBS_NOINTEGRALHEIGHT | LBS_NOTIFY
+    LTEXT           "Binary types:", IDC_STATIC, 88, 56, 44, 8, SS_LEFT
+    LISTBOX         IDC_LIST_BINARY, 88, 68, 76, 51, WS_TABSTOP | WS_VSCROLL | LBS_NOINTEGRALHEIGHT | LBS_NOTIFY
+    LTEXT           "Add ASCII:", IDC_STATIC, 4, 120, 37, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_ASCII, 4, 128, 76, 14, ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Add Binary:", IDC_STATIC, 88, 120, 38, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_BINARY, 88, 128, 76, 14, ES_AUTOHSCROLL | ES_WANTRETURN
+    GROUPBOX        "Active transfer port range", IDC_STATIC, 4, 148, 164, 42
+    LTEXT           "Min port (>1000):", IDC_STATIC, 8, 164, 58, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PORT_MIN, 12, 172, 68, 14, ES_AUTOHSCROLL
+    LTEXT           "Max port (<65000):", IDC_STATIC, 92, 164, 65, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PORT_MAX, 96, 172, 68, 14, ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_PROFILESFTP DIALOGEX 4, 20, 200, 192
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | DS_CONTROL
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    LTEXT           "LIST parameters:", IDC_STATIC, 4, 4, 63, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_LISTPARAMS, 8, 12, 138, 14, ES_AUTOHSCROLL
+    LTEXT           "Hint: try ""-al"" to show hidden files", IDC_STATIC, 8, 28, 140, 8, SS_LEFT
+END
+
+IDD_DIALOG_PROFILESCACHE DIALOGEX 4, 20, 200, 192
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | DS_CONTROL
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    LTEXT           "Profile cache maps:", IDC_STATIC, 4, 4, 63, 8, SS_LEFT
+    CONTROL         "", IDC_LIST_CACHE, WC_LISTVIEW, WS_TABSTOP | WS_BORDER | LVS_ALIGNLEFT | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | LVS_SINGLESEL | LVS_REPORT, 4, 12, 154, 112
+    CONTROL         "", IDC_SPIN_CACHE, UPDOWN_CLASS, 0, 160, 56, 11, 20
+    LTEXT           "Local path:", IDC_STATIC, 4, 132, 36, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_CACHELOCAL, 4, 140, 138, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "...", IDC_BUTTON_CACHEBROWSE, 146, 140, 14, 13
+    LTEXT           "External path:", IDC_STATIC, 4, 156, 47, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_CACHEEXTERNAL, 4, 164, 138, 14, ES_AUTOHSCROLL
+    PUSHBUTTON      "Add new", IDC_BUTTON_CACHE_ADD, 168, 136, 36, 14, WS_DISABLED
+    PUSHBUTTON      "Edit", IDC_BUTTON_CACHE_EDIT, 168, 152, 36, 14, WS_DISABLED
+    PUSHBUTTON      "Delete", IDC_BUTTON_CACHE_DELETE, 168, 168, 36, 14, WS_DISABLED
+END
+
+IDD_DIALOG_GLOBAL DIALOGEX 0, 0, 186, 128
+STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+CAPTION "Global settings"
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    LTEXT           "Global cache:", IDC_STATIC, 4, 4, 44, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_CACHE, 8, 12, 160, 14, ES_AUTOHSCROLL
+    AUTOCHECKBOX    "Clear ENTIRE cache on disconnect (Use with care!)", IDC_CHECK_CLEARCACHE, 4, 30, 174, 8
+    AUTOCHECKBOX    "Do not use the recycle bin (delete permanently)", IDC_CHECK_CLEARNORECYCLE, 12, 42, 170, 8
+    LTEXT           "Master password (max 8 characters):", IDC_STATIC, 4, 56, 160, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_MASTERPASS, 8, 64, 160, 14, ES_AUTOHSCROLL | ES_PASSWORD
+    LTEXT           "When this field is left blank, a default string will be used.\r\nOtherwise, you will be asked for the password on each start of SynFTP.", IDC_STATIC, 8, 82, 180, 24, SS_LEFT
+    DEFPUSHBUTTON   "OK", IDC_BUTTON_CLOSE, 132, 104, 48, 14
+END
+
+IDD_DIALOG_GENERIC DIALOGEX 0, 0, 10, 10
+STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_BORDER | WS_CAPTION | WS_CHILDWINDOW | WS_DLGFRAME | WS_SYSMENU
+CAPTION "SynFTPDlg"
+FONT 8, "MS Shell Dlg", 0, 0, 1
+BEGIN
+END
+
+IDD_DIALOG_INPUT DIALOGEX 0, 0, 150, 64
+STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+CAPTION "Input"
+FONT 8, "MS Shell Dlg", 400, 0, 1
+BEGIN
+    LTEXT           "Input required:", IDC_STATIC_COMMENT, 6, 6, 138, 18, SS_LEFT
+    EDITTEXT        IDC_EDIT_INPUT, 12, 26, 132, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDB_BUTTON_OK, 44, 44, 50, 14
+    PUSHBUTTON      "Cancel", IDB_BUTTON_CANCEL, 96, 44, 50, 14
+END
+
+IDD_DIALOG_MESSAGE DIALOGEX 0, 0, 150, 48
+STYLE DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+CAPTION "Input"
+FONT 8, "MS Shell Dlg", 400, 0, 1
+BEGIN
+    LTEXT           "Message", IDC_STATIC_MESSAGE, 6, 6, 138, 18, SS_LEFT
+    DEFPUSHBUTTON   "No", IDB_BUTTON_NO, 96, 28, 50, 14
+    PUSHBUTTON      "Yes", IDB_BUTTON_YES, 44, 28, 50, 14
+END
+
+IDD_DIALOG_ABOUT DIALOGEX 0, 0, 200, 232
+STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+CAPTION "About SynFTP"
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    EDITTEXT        IDC_EDIT_ABOUTMSG, 4, 4, 192, 160, NOT WS_BORDER |/* ES_AUTOHSCROLL |*/ ES_MULTILINE | ES_READONLY | WS_DISABLED
+    LTEXT           "libssh version:", IDC_STATIC, 4, 172, 46, 8, SS_LEFT
+    LTEXT           "OpenSSL version:", IDC_STATIC, 4, 184, 58, 8, SS_LEFT
+    LTEXT           "SynFTP version:", IDC_STATIC, 4, 196, 54, 8, SS_LEFT
+    DEFPUSHBUTTON   "Close", IDC_BUTTON_CLOSE, 144, 212, 48, 14
+    RTEXT           "0", IDC_STATIC_SSHVERSION, 68, 172, 128, 8, SS_LEFT
+    RTEXT           "0", IDC_STATIC_SSLVERSION, 68, 184, 128, 8, SS_LEFT
+    RTEXT           "0", IDC_STATIC_SYNFTPVERSION, 68, 196, 128, 8, SS_LEFT
+    PUSHBUTTON      "Visit SynFTP site", IDC_BUTTON_VISIT, 4, 212, 58, 14
+    PUSHBUTTON      "Donate", IDC_BUTTON_DONATE, 66, 212, 52, 14
+END
+
+IDD_DIALOG_KBINT DIALOGEX 0, 0, 186, 118
+STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
+CAPTION "SFTP Keyboard interactive authentication"
+FONT 8, "Ms Shell Dlg 2", 400, 0, 1
+BEGIN
+    DEFPUSHBUTTON   "OK", IDOK, 72, 100, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 132, 100, 50, 14
+    LTEXT           "010203040506070809101112131415 161718192021222324252627282930", IDC_STATIC_NAMEFIELD, 4, 12, 176, 16, SS_LEFT
+    LTEXT           "Name:", IDC_STATIC, 4, 4, 22, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_PROMPT1, 4, 48, 176, 14, WS_VSCROLL | NOT WS_BORDER | ES_AUTOHSCROLL | ES_MULTILINE | ES_READONLY
+    LTEXT           "Server prompts:", IDC_STATIC, 4, 36, 53, 8, SS_LEFT
+    EDITTEXT        IDC_EDIT_ANSWER1, 4, 68, 176, 14, ES_AUTOHSCROLL
+    LTEXT           "", IDC_STATIC_MARKER, 4, 92, 1, 1, SS_LEFT
+END
+
+//
+// Version Information resources
+//
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION     IDT_VERSION_NUM
+    PRODUCTVERSION  IDT_VERSION_NUM
+    FILEOS          VOS__WINDOWS32
+    FILETYPE        VFT_DLL
+    FILESUBTYPE     VFT2_UNKNOWN
+    FILEFLAGSMASK   0x00000017
+    FILEFLAGS       0x00000002
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "FileDescription", "FTP Plugin for SynWrite"
+            VALUE "FileVersion", IDT_VERSION_TEXT
+            VALUE "InternalName", "SynFTP"
+            VALUE "LegalCopyright", "Copyright (C) 2012"
+            VALUE "OriginalFilename", "SynFTP.dll"
+            VALUE "ProductName", "SynFTP"
+            VALUE "ProductVersion", IDT_VERSION_TEXT
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0000, 0x04B0
+    END
+END
