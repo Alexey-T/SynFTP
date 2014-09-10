@@ -149,19 +149,19 @@ BEGIN
     PUSHBUTTON      "Delete", IDC_BUTTON_CACHE_DELETE, 168, 168, 36, 14, WS_DISABLED
 END
 
-IDD_DIALOG_GLOBAL DIALOGEX 0, 0, 186, 128
+IDD_DIALOG_GLOBAL DIALOGEX 0, 0, 245, 128
 STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
 CAPTION "Global settings"
 FONT 8, "Ms Shell Dlg 2", 400, 0, 1
 BEGIN
-    LTEXT           "Global cache:", IDC_STATIC, 4, 4, 44, 8, SS_LEFT
-    EDITTEXT        IDC_EDIT_CACHE, 8, 12, 160, 14, ES_AUTOHSCROLL
-    AUTOCHECKBOX    "Clear ENTIRE cache on disconnect (Use with care!)", IDC_CHECK_CLEARCACHE, 4, 30, 174, 8
-    AUTOCHECKBOX    "Do not use the recycle bin (delete permanently)", IDC_CHECK_CLEARNORECYCLE, 12, 42, 170, 8
-    LTEXT           "Master password (max 8 characters):", IDC_STATIC, 4, 56, 160, 8, SS_LEFT
-    EDITTEXT        IDC_EDIT_MASTERPASS, 8, 64, 160, 14, ES_AUTOHSCROLL | ES_PASSWORD
-    LTEXT           "When this field is left blank, a default string will be used.\r\nOtherwise, you will be asked for the password on each start of SynFTP.", IDC_STATIC, 8, 82, 180, 24, SS_LEFT
-    DEFPUSHBUTTON   "OK", IDC_BUTTON_CLOSE, 132, 104, 48, 14
+    LTEXT           "Global cache:", IDC_STATIC, 4, 4, 44, 8, SS_LEFT, WS_EX_LEFT
+    EDITTEXT        IDC_EDIT_CACHE, 8, 12, 230, 14, ES_AUTOHSCROLL, WS_EX_LEFT
+    AUTOCHECKBOX    "Clear ENTIRE cache on disconnect (Use with care!)", IDC_CHECK_CLEARCACHE, 4, 30, 174, 8, 0, WS_EX_LEFT
+    AUTOCHECKBOX    "Do not use the recycle bin (delete permanently)", IDC_CHECK_CLEARNORECYCLE, 12, 42, 170, 8, 0, WS_EX_LEFT
+    LTEXT           "Master password (max 8 characters):", IDC_STATIC, 4, 56, 160, 8, SS_LEFT, WS_EX_LEFT
+    EDITTEXT        IDC_EDIT_MASTERPASS, 8, 64, 230, 14, ES_AUTOHSCROLL | ES_PASSWORD, WS_EX_LEFT
+    LTEXT           "When this field is left blank, a default string will be used.\r\nOtherwise, you will be asked for the password on each start of SynFTP.", IDC_STATIC, 8, 82, 230, 24, SS_LEFT, WS_EX_LEFT
+    DEFPUSHBUTTON   "OK", IDC_BUTTON_CLOSE, 99, 104, 48, 14, 0, WS_EX_LEFT
 END
 
 IDD_DIALOG_GENERIC DIALOGEX 0, 0, 10, 10
@@ -243,7 +243,7 @@ BEGIN
             VALUE "FileDescription", "FTP Plugin for SynWrite"
             VALUE "FileVersion", IDT_VERSION_TEXT
             VALUE "InternalName", "SynFTP"
-            VALUE "LegalCopyright", "Copyright (C) 2012"
+            VALUE "LegalCopyright", "Copyright (C) 2012-2014"
             VALUE "OriginalFilename", "SynFTP.dll"
             VALUE "ProductName", "SynFTP"
             VALUE "ProductVersion", IDT_VERSION_TEXT
