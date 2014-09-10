@@ -50,6 +50,9 @@ public:
 
 	int						LoadSettings(const TiXmlElement * settingsElem);
 	int						SaveSettings(TiXmlElement * settingsElem);
+	
+	int						GetMenuSplit() const;
+	int						SetMenuSplit(int menuSplit);
 private:
 	TCHAR*					m_globalCachePath;
 	FTPCache				m_globalCache;
@@ -57,6 +60,7 @@ private:
 	bool					m_clearCachePermanent;
 	bool					m_showOutput;
 	double					m_splitRatio;
+	int						m_menuSplit;
 };
 
 #endif //FTPSETTINGS_H
