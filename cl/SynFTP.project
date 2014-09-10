@@ -112,7 +112,7 @@
         <IncludePath Value="../include/synftp/Windows"/>
         <IncludePath Value="../tinyxml/include"/>
         <IncludePath Value="../utcp/include"/>
-        <IncludePath Value="../libssh-0.4.4/include"/>
+        <IncludePath Value="../libssh-0.6.3/include"/>
         <Preprocessor Value="UNICODE"/>
         <Preprocessor Value="_UNICODE"/>
         <Preprocessor Value="LIBSSH_STATIC"/>
@@ -176,7 +176,7 @@ add-symbol-file Debug/Plugins/SynFTP.dll</StartupCommands>
         <IncludePath Value="../include/synftp/Windows"/>
         <IncludePath Value="../tinyxml/include"/>
         <IncludePath Value="../UTCP/Include"/>
-        <IncludePath Value="../libssh-0.4.4/include"/>
+        <IncludePath Value="../libssh-0.6.3/include"/>
         <Preprocessor Value="UNICODE"/>
         <Preprocessor Value="_UNICODE"/>
         <Preprocessor Value="LIBSSH_STATIC"/>

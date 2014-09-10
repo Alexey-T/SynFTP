@@ -63,10 +63,10 @@
 //#cmakedefine HAVE_CLOCK_GETTIME 1
 
 /* Define to 1 if you have the `ntohll' function. */
-#define HAVE_NTOHLL 1
+//#cmakedefine HAVE_NTOHLL 1
 
 /* Define to 1 if you have the `htonll' function. */
-#define HAVE_HTONLL 1
+//#cmakedefine HAVE_HTONLL 1
 
 /* Define to 1 if you have the `strtoull' function. */
 #define HAVE_STRTOULL 1
@@ -76,8 +76,6 @@
 
 /* Define to 1 if you have the `_strtoui64' function. */
 #define HAVE__STRTOUI64 1
-
-#define HAVE_STRTOULL
 
 /*************************** LIBRARIES ***************************/
 
