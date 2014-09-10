@@ -77,8 +77,6 @@
 /* Define to 1 if you have the `_strtoui64' function. */
 #define HAVE__STRTOUI64 1
 
-#define HAVE_STRTOULL
-
 /*************************** LIBRARIES ***************************/
 
 /* Define to 1 if you have the `crypto' library (-lcrypto). */
