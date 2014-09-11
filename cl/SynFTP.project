@@ -124,9 +124,9 @@
         <Library Value="uuid"/>
         <Library Value="ole32"/>
         <Library Value="shlwapi"/>
-        <Library Value="TinyXML"/>
-        <Library Value="UTCP"/>
-        <Library Value="ssh"/>
+        <Library Value="TinyXMLD"/>
+        <Library Value="UTCPD"/>
+        <Library Value="sshD"/>
         <Library Value="ssl"/>
         <Library Value="crypto"/>
         <Library Value="zlibD"/>
