@@ -553,11 +553,13 @@ INT_PTR ProfilesDialog::OnInitDialog() {
 	lvc.fmt = LVCFMT_LEFT;
 
 	lvc.cx = 110;
-	lvc.pszText = TEXT("Local path");
+	TCHAR strLocal[] = TEXT("Local path");
+	lvc.pszText = strLocal;
 	ListView_InsertColumn(hListCache, 0, &lvc);
 
 	lvc.cx = 110;
-	lvc.pszText = TEXT("External path");
+	TCHAR strExternal[] = TEXT("External path");
+	lvc.pszText = strExternal;
 	ListView_InsertColumn(hListCache, 1, &lvc);
 
 	HWND hCombobox = ::GetDlgItem(m_hPageConnection, IDC_COMBO_SECURITY);
