@@ -57,11 +57,9 @@ INT_PTR AboutDialog::OnInitDialog() {
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SYNFTPVERSION, synFTPVersion);
 
 	const TCHAR * aboutMessage = 
-		TEXT("SynFTP, Copyright 2012\r\n")
-		TEXT("Created by Harry ( harrybharry@users.sourceforge.net )\r\n")
-		TEXT("\r\n")
-		TEXT("For help, info and updates, visit the site by clicking the button below.\r\n")
-		TEXT("(For the related NppFTP project)\r\n")
+		TEXT("SynFTP, Copyright 2012-2014\r\n")
+		TEXT("Created by Harry\r\n")
+		TEXT("Modified by tbeu\r\n")
 		TEXT("\r\n")
 		TEXT("Enjoy the comfort of transferring your files from your favorite editor! =)")
 		TEXT("\r\n\r\n")
