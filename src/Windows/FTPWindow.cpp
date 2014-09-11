@@ -23,6 +23,7 @@
 #include "resource.h"
 #include "InputDialog.h"
 #include "MessageDialog.h"
+#include "AboutDialog.h"
 
 #include "Commands.h"
 #include <Commctrl.h>
@@ -407,6 +408,11 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 				case IDB_BUTTON_TOOLBAR_MESSAGES: {
 					m_outputShown = !m_outputLog.IsVisible();
 					m_outputLog.Show(m_outputShown);
+					result = TRUE;
+					break; }
+				case IDB_BUTTON_TOOLBAR_ABOUT: {
+					AboutDialog ab;
+					ab.Create(m_hSyn);
 					result = TRUE;
 					break; }
 				case IDM_POPUP_NEWDIR: {
@@ -849,7 +855,7 @@ int FTPWindow::CreateMenus() {
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_RENAMEDIR,TEXT("&Rename Directory"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_DELETEDIR,TEXT("D&elete directory"));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
-    AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADFILE,TEXT("&Upload current file here"));
+	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADFILE,TEXT("&Upload current file here"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADOTHERFILE,TEXT("Upload &other file here..."));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_REFRESHDIR,TEXT("Re&fresh"));

@@ -43,6 +43,7 @@ IDB_BITMAP_TREEICONS BITMAP       "bitmaps\\icons_treeview.bmp"
 IDB_BITMAP_TREEICONS_MASK BITMAP  "bitmaps\\icons_treeview_mask.bmp"
 IDB_BITMAP_UPLOAD  BITMAP         "bitmaps\\toolbar_upload.bmp"
 IDB_BITMAP_PAYPAL  BITMAP         "bitmaps\\pp_favicon_x.bmp"
+IDB_BITMAP_INFO BITMAP            "bitmaps\\toolbar_info.bmp"
 
 //
 // Dialog resources
