@@ -50,12 +50,20 @@ INT_PTR AboutDialog::DlgMsgProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 INT_PTR AboutDialog::OnInitDialog() {
 	const TCHAR * sshVersion = TEXT(SSH_STRINGIFY(LIBSSH_VERSION));
-	const TCHAR * sslVersion = TEXT(OPENSSL_VERSION_TEXT);
+	TCHAR sslVersion[] = TEXT(OPENSSL_VERSION_TEXT);
 	const TCHAR * synFTPVersion = TEXT(IDT_VERSION_TEXT);
 	const TCHAR * zlibVersion = TEXT(ZLIB_VERSION);
+	TCHAR * sslVersion2 = sslVersion;
+	
+	TCHAR* sslVersionToken = _tcstok(sslVersion, TEXT(" "));
+	if (sslVersionToken) {
+		sslVersionToken = _tcstok(NULL, TEXT(" "));
+		if (sslVersionToken)
+			sslVersion2 = sslVersionToken;
+	}
 
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SSHVERSION, sshVersion);
-	::SetDlgItemText(m_hwnd, IDC_STATIC_SSLVERSION, sslVersion);
+	::SetDlgItemText(m_hwnd, IDC_STATIC_SSLVERSION, sslVersion2);
 	::SetDlgItemText(m_hwnd, IDC_STATIC_ZLIBVERSION, zlibVersion);
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SYNFTPVERSION, synFTPVersion);
 
