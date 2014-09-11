@@ -23,6 +23,7 @@
 #include "symbols.h"
 #include <libssh/libssh.h>
 #include <openssl/ssl.h>
+#include <zlib.h>
 
 AboutDialog::AboutDialog() :
 	Dialog(IDD_DIALOG_ABOUT),
@@ -51,9 +52,11 @@ INT_PTR AboutDialog::OnInitDialog() {
 	const TCHAR * sshVersion = TEXT(SSH_STRINGIFY(LIBSSH_VERSION));
 	const TCHAR * sslVersion = TEXT(OPENSSL_VERSION_TEXT);
 	const TCHAR * synFTPVersion = TEXT(IDT_VERSION_TEXT);
+	const TCHAR * zlibVersion = TEXT(ZLIB_VERSION);
 
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SSHVERSION, sshVersion);
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SSLVERSION, sslVersion);
+	::SetDlgItemText(m_hwnd, IDC_STATIC_ZLIBVERSION, zlibVersion);
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SYNFTPVERSION, synFTPVersion);
 
 	const TCHAR * aboutMessage = 
@@ -68,6 +71,7 @@ INT_PTR AboutDialog::OnInitDialog() {
 		TEXT("- libssh\r\n")
 		TEXT("- Ultimate TCP/IP\r\n")
 		TEXT("- TinyXML\r\n")
+		TEXT("- zlib\r\n")
 		TEXT("\r\n");
 		//TEXT("And not to forget:\r\n")
 		//TEXT("Silk icons from famfamfam\r\n");
