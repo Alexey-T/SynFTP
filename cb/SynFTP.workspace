@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="SynFTP">
+		<Project filename="../zlib/cb/zlib.cbp" />
+		<Project filename="../tinyxml/cb/TinyXML.cbp" />
+		<Project filename="../UTCP/cb/UTCP.cbp" />
+		<Project filename="../libssh-0.6.3/cb/libssh.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
