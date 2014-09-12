@@ -362,8 +362,10 @@ int PU::SimplifyExternalPath(const char * path, const char * currentDir, char * 
 	i = 0;
 	for(; i < dirs.size(); i++) {
 		size_t len = strlen(dirs[i]);
-		if (totalLen+len >= bufSize)
+		if (totalLen+len >= bufSize) {
+			delete [] temp;
 			return -1;
+		}
 		strcat(buffer, dirs[i]);
 		totalLen += len;
 		if (i != dirs.size()-1) {
