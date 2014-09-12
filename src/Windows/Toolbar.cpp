@@ -41,17 +41,18 @@ const TBBUTTON defaultButtons[] = {
 };
 
 const TCHAR* tooltips[] = {
-	TEXT("(Dis)Connect"),
+	TEXT("Connect/Disconnect"),
 	TEXT("-"),
 	TEXT("Download file"),
 	TEXT("Upload file"),
 	TEXT("Refresh"),
-	TEXT("Abort"),
+	TEXT("Abort current operation"),
 	//TEXT("-"),
 	//TEXT("Send quote"),
 	TEXT("-"),
 	TEXT("Settings"),
-	TEXT("Show messages window")
+	TEXT("Show log panel"),
+	TEXT("About plugin")
 };
 
 const size_t nrDefaultButtons = sizeof(defaultButtons)/sizeof(defaultButtons[0]);
