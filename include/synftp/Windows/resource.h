@@ -36,6 +36,7 @@
 #define IDI_ICON_MESSAGES				114
 #define IDB_BITMAP_PAYPAL				115
 #define IDB_BITMAP_INFO					116
+#define IDB_BITMAP_OPENDIR				196
 
 #define IDD_DIALOG_GENERIC				117
 
@@ -119,4 +120,4 @@
 	#define IDC_EDIT_PROMPTMAX			193
 	#define IDC_EDIT_ANSWERMAX			194
 	#define IDC_STATIC_MARKER			195
-//next id:								196
+//next id:								197
