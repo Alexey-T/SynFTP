@@ -1213,6 +1213,27 @@ int FTPWindow::CreateFile(FileObject * parent) {
 		return 0;
 
 	const TCHAR * newName = id.GetValue();
+
+	// Check if there is already an existing file of the same name
+	int childcount = parent->GetChildCount();
+	char *newFileName_CP = SU::TCharToCP(newName, CP_ACP);
+
+	for(int i = 0; i < childcount; i++) {
+
+		const char *currentFileName = parent->GetChild(i)->GetName();
+		if (!strcmp(currentFileName, newFileName_CP)) {
+
+			res = ::MessageBox(m_hwnd, TEXT("A file/directory by the same name already exists. Do you want to create a new blank file ?"), TEXT("Creating file"), MB_YESNO);
+			if (res == IDNO) {
+				return 0;
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+
 	char path[MAX_PATH];
 	res = PU::ConcatLocalToExternal(parent->GetPath(), newName, path, MAX_PATH);
 	if (res == -1)
