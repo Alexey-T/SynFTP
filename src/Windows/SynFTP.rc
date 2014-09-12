@@ -34,6 +34,7 @@ IDB_BITMAP_ABORT   BITMAP         "bitmaps\\toolbar_abort.bmp"
 IDB_BITMAP_CONNECT BITMAP         "bitmaps\\toolbar_connected.bmp"
 IDB_BITMAP_DISCONNECT BITMAP      "bitmaps\\toolbar_disconnected.bmp"
 IDB_BITMAP_DOWNLOAD BITMAP        "bitmaps\\toolbar_download.bmp"
+IDB_BITMAP_OPENDIR BITMAP         "bitmaps\\maintoolbar_folder.bmp"
 IDB_BITMAP_FOLDERS BITMAP         "bitmaps\\maintoolbar_folder.bmp"
 IDB_BITMAP_MESSAGES BITMAP        "bitmaps\\toolbar_messages.bmp"
 IDB_BITMAP_RAWCOMMAND BITMAP      "bitmaps\\toolbar_rawcommand.bmp"
@@ -43,6 +44,7 @@ IDB_BITMAP_TREEICONS BITMAP       "bitmaps\\icons_treeview.bmp"
 IDB_BITMAP_TREEICONS_MASK BITMAP  "bitmaps\\icons_treeview_mask.bmp"
 IDB_BITMAP_UPLOAD  BITMAP         "bitmaps\\toolbar_upload.bmp"
 IDB_BITMAP_PAYPAL  BITMAP         "bitmaps\\pp_favicon_x.bmp"
+IDB_BITMAP_INFO BITMAP            "bitmaps\\toolbar_info.bmp"
 
 //
 // Dialog resources
@@ -192,21 +194,21 @@ BEGIN
     PUSHBUTTON      "Yes", IDB_BUTTON_YES, 44, 28, 50, 14
 END
 
-IDD_DIALOG_ABOUT DIALOGEX 0, 0, 200, 232
+IDD_DIALOG_ABOUT DIALOGEX 0, 0, 200, 200
 STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_FIXEDSYS | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
 CAPTION "About SynFTP"
 FONT 8, "Ms Shell Dlg 2", 400, 0, 1
 BEGIN
-    EDITTEXT        IDC_EDIT_ABOUTMSG, 4, 4, 192, 160, NOT WS_BORDER |/* ES_AUTOHSCROLL |*/ ES_MULTILINE | ES_READONLY | WS_DISABLED
-    LTEXT           "libssh version:", IDC_STATIC, 4, 172, 46, 8, SS_LEFT
-    LTEXT           "OpenSSL version:", IDC_STATIC, 4, 184, 58, 8, SS_LEFT
-    LTEXT           "SynFTP version:", IDC_STATIC, 4, 196, 54, 8, SS_LEFT
-    DEFPUSHBUTTON   "Close", IDC_BUTTON_CLOSE, 144, 212, 48, 14
-    RTEXT           "0", IDC_STATIC_SSHVERSION, 68, 172, 128, 8, SS_LEFT
-    RTEXT           "0", IDC_STATIC_SSLVERSION, 68, 184, 128, 8, SS_LEFT
-    RTEXT           "0", IDC_STATIC_SYNFTPVERSION, 68, 196, 128, 8, SS_LEFT
-    PUSHBUTTON      "Visit SynFTP site", IDC_BUTTON_VISIT, 4, 212, 58, 14
-    PUSHBUTTON      "Donate", IDC_BUTTON_DONATE, 66, 212, 52, 14
+    EDITTEXT        IDC_EDIT_ABOUTMSG, 4, 4, 192, 130, WS_DISABLED | NOT WS_BORDER | ES_MULTILINE | ES_READONLY, WS_EX_LEFT
+    LTEXT           "libssh version:", IDC_STATIC, 4, 126, 46, 8, SS_LEFT, WS_EX_LEFT
+    LTEXT           "OpenSSL version:", IDC_STATIC, 4, 138, 58, 8, SS_LEFT, WS_EX_LEFT
+    LTEXT           "zlib version:", IDC_STATIC, 4, 150, 54, 8, SS_LEFT, WS_EX_LEFT
+    LTEXT           "SynFTP version:", IDC_STATIC, 4, 162, 54, 8, SS_LEFT, WS_EX_LEFT
+    DEFPUSHBUTTON   "OK", IDC_BUTTON_CLOSE, 82, 178, 36, 14, 0, WS_EX_LEFT
+    RTEXT           "0", IDC_STATIC_SSHVERSION, 68, 126, 128, 8, SS_RIGHT, WS_EX_LEFT
+    RTEXT           "0", IDC_STATIC_SSLVERSION, 68, 138, 128, 8, SS_RIGHT, WS_EX_LEFT
+    RTEXT           "0", IDC_STATIC_ZLIBVERSION, 68, 150, 128, 8, SS_RIGHT, WS_EX_LEFT
+    RTEXT           "0", IDC_STATIC_SYNFTPVERSION, 68, 162, 128, 8, SS_RIGHT, WS_EX_LEFT
 END
 
 IDD_DIALOG_KBINT DIALOGEX 0, 0, 186, 118

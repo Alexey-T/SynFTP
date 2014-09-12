@@ -23,6 +23,7 @@
 #include "resource.h"
 #include "InputDialog.h"
 #include "MessageDialog.h"
+#include "AboutDialog.h"
 
 #include "Commands.h"
 #include <Commctrl.h>
@@ -326,6 +327,24 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 					//disconnect();
 					result = TRUE;
 					break;}
+
+				case IDB_BUTTON_TOOLBAR_OPENDIR: {
+
+					// Show the dialog to get input directory name from the user.
+					InputDialog id;
+					int res = id.Create(m_hwnd, TEXT("Open Directory"), TEXT("Enter directory name:"), TEXT(""));
+					if (res != 1) {
+						return 0;
+					}
+
+					// Read the input directory name.
+					const TCHAR *dirName    = id.GetValue();
+					char *dirNameCP         = SU::TCharToCP(dirName, CP_ACP);
+
+					m_ftpSession->GetDirectoryHierarchy(dirNameCP);
+					break;
+				}
+
 				case IDM_POPUP_DOWNLOADFILE:
 				case IDB_BUTTON_TOOLBAR_DOWNLOAD: {
 					SHORT state = GetKeyState(VK_CONTROL);
@@ -407,6 +426,11 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 				case IDB_BUTTON_TOOLBAR_MESSAGES: {
 					m_outputShown = !m_outputLog.IsVisible();
 					m_outputLog.Show(m_outputShown);
+					result = TRUE;
+					break; }
+				case IDB_BUTTON_TOOLBAR_ABOUT: {
+					AboutDialog ab;
+					ab.Create(m_hSyn);
 					result = TRUE;
 					break; }
 				case IDM_POPUP_NEWDIR: {
@@ -849,7 +873,7 @@ int FTPWindow::CreateMenus() {
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_RENAMEDIR,TEXT("&Rename Directory"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_DELETEDIR,TEXT("D&elete directory"));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
-    AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADFILE,TEXT("&Upload current file here"));
+	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADFILE,TEXT("&Upload current file here"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADOTHERFILE,TEXT("Upload &other file here..."));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_REFRESHDIR,TEXT("Re&fresh"));
@@ -891,10 +915,12 @@ int FTPWindow::SetToolbarState() {
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_DOWNLOAD, false);
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_UPLOAD, false);
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_REFRESH, false);
+		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_OPENDIR, false);
 	} else {
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_DOWNLOAD, !m_currentSelection->isDir());
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_UPLOAD, true);//m_localFileExists);//m_currentSelection->isDir());
 		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_REFRESH, m_currentSelection->isDir());
+		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_OPENDIR, true);
 	}
 
 	return 0;
@@ -958,6 +984,19 @@ int FTPWindow::OnEvent(QueueOperation * queueOp, int code, void * data, bool isS
 			if (isStart) {
 				break;
 			}
+
+			std::vector<FTPDir*> parentDirObjs = dirop->GetParentDirObjs();
+			int i;
+
+			for (i=0; i<parentDirObjs.size(); i++) {
+				FTPDir* curFTPDir = parentDirObjs[i];
+
+				FileObject* parent;
+				parent = m_ftpSession->FindPathObject(curFTPDir->dirPath);
+				if (parent)
+					OnDirectoryRefresh(parent, curFTPDir->files, curFTPDir->count);
+			}
+
 			if (queueResult == -1) {
 				OutErr("Failure retrieving contents of directory %s", dirop->GetDirPath());
 				//break commented: even if failed, update the treeview etc., count should result in 0 anyway
@@ -1207,6 +1246,27 @@ int FTPWindow::CreateFile(FileObject * parent) {
 		return 0;
 
 	const TCHAR * newName = id.GetValue();
+
+	// Check if there is already an existing file of the same name
+	int childcount = parent->GetChildCount();
+	char *newFileName_CP = SU::TCharToCP(newName, CP_ACP);
+
+	for(int i = 0; i < childcount; i++) {
+
+		const char *currentFileName = parent->GetChild(i)->GetName();
+		if (!strcmp(currentFileName, newFileName_CP)) {
+
+			res = ::MessageBox(m_hwnd, TEXT("A file/directory by the same name already exists. Do you want to create a new blank file ?"), TEXT("Creating file"), MB_YESNO);
+			if (res == IDNO) {
+				return 0;
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+
 	char path[MAX_PATH];
 	res = PU::ConcatLocalToExternal(parent->GetPath(), newName, path, MAX_PATH);
 	if (res == -1)

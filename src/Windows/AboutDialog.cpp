@@ -23,6 +23,7 @@
 #include "symbols.h"
 #include <libssh/libssh.h>
 #include <openssl/ssl.h>
+#include <zlib.h>
 
 AboutDialog::AboutDialog() :
 	Dialog(IDD_DIALOG_ABOUT),
@@ -49,19 +50,27 @@ INT_PTR AboutDialog::DlgMsgProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 INT_PTR AboutDialog::OnInitDialog() {
 	const TCHAR * sshVersion = TEXT(SSH_STRINGIFY(LIBSSH_VERSION));
-	const TCHAR * sslVersion = TEXT(OPENSSL_VERSION_TEXT);
+	TCHAR sslVersion[] = TEXT(OPENSSL_VERSION_TEXT);
 	const TCHAR * synFTPVersion = TEXT(IDT_VERSION_TEXT);
+	const TCHAR * zlibVersion = TEXT(ZLIB_VERSION);
+	TCHAR * sslVersion2 = sslVersion;
+	
+	TCHAR* sslVersionToken = _tcstok(sslVersion, TEXT(" "));
+	if (sslVersionToken) {
+		sslVersionToken = _tcstok(NULL, TEXT(" "));
+		if (sslVersionToken)
+			sslVersion2 = sslVersionToken;
+	}
 
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SSHVERSION, sshVersion);
-	::SetDlgItemText(m_hwnd, IDC_STATIC_SSLVERSION, sslVersion);
+	::SetDlgItemText(m_hwnd, IDC_STATIC_SSLVERSION, sslVersion2);
+	::SetDlgItemText(m_hwnd, IDC_STATIC_ZLIBVERSION, zlibVersion);
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SYNFTPVERSION, synFTPVersion);
 
 	const TCHAR * aboutMessage = 
-		TEXT("SynFTP, Copyright 2012\r\n")
-		TEXT("Created by Harry ( harrybharry@users.sourceforge.net )\r\n")
-		TEXT("\r\n")
-		TEXT("For help, info and updates, visit the site by clicking the button below.\r\n")
-		TEXT("(For the related NppFTP project)\r\n")
+		TEXT("SynFTP, Copyright 2012-2014\r\n")
+		TEXT("Created by Harry\r\n")
+		TEXT("Modified by tbeu\r\n")
 		TEXT("\r\n")
 		TEXT("Enjoy the comfort of transferring your files from your favorite editor! =)")
 		TEXT("\r\n\r\n")
@@ -70,6 +79,7 @@ INT_PTR AboutDialog::OnInitDialog() {
 		TEXT("- libssh\r\n")
 		TEXT("- Ultimate TCP/IP\r\n")
 		TEXT("- TinyXML\r\n")
+		TEXT("- zlib\r\n")
 		TEXT("\r\n");
 		//TEXT("And not to forget:\r\n")
 		//TEXT("Silk icons from famfamfam\r\n");
