@@ -42,18 +42,19 @@ const TBBUTTON defaultButtons[] = {
 };
 
 const TCHAR* tooltips[] = {
-	TEXT("(Dis)Connect"),
+	TEXT("Connect/Disconnect"),
 	TEXT("-"),
 	TEXT("Open Directory"),
 	TEXT("Download file"),
 	TEXT("Upload file"),
 	TEXT("Refresh"),
-	TEXT("Abort"),
+	TEXT("Abort current operation"),
 	//TEXT("-"),
 	//TEXT("Send quote"),
 	TEXT("-"),
 	TEXT("Settings"),
-	TEXT("Show messages window")
+	TEXT("Show log panel"),
+	TEXT("About plugin")
 };
 
 const size_t nrDefaultButtons = sizeof(defaultButtons)/sizeof(defaultButtons[0]);
@@ -79,6 +80,8 @@ int Toolbar::Create(HWND hParent) {
 	if (res == -1)
 		return -1;
 
+//	HRESULT hres = PF::SetWindowTheme(m_hwnd, L"", L"");
+	
 	SendMessage(m_hwnd, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0);
 	SendMessage(m_hwnd, TB_SETBITMAPSIZE, 0, (LPARAM)MAKELONG(16, 16));
 	SendMessage(m_hwnd, TB_SETBUTTONSIZE, 0, (LPARAM)MAKELONG(18, 18));
@@ -317,6 +320,8 @@ int Rebar::Create(HWND hParent) {
 	int ret = Window::Create(hParent);
 	if (ret == -1)
 		return -1;
+
+	HRESULT hres = PF::SetWindowTheme(m_hwnd, L"", L"");
 
 	REBARINFO rbi;
 	ZeroMemory(&rbi, sizeof(REBARINFO));

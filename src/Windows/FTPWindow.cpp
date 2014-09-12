@@ -1174,7 +1174,7 @@ int FTPWindow::OnConnect(int code) {
 
 	FileObject * last = root;
 	while(last->GetChildCount() > 0) {
-		last = last->GetChild(0);
+		last = last->GetChild(0u);
 	}
 
 	m_treeview.EnsureObjectVisible(last);
