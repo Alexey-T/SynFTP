@@ -40,8 +40,8 @@ public:
 	int						StartSession(FTPProfile * sessionProfile);
 	int						TerminateSession();
 
-	bool					IsConnected();
-	const FTPProfile*		GetCurrentProfile();
+	bool					IsConnected() const;
+	const FTPProfile*		GetCurrentProfile() const;
 
 	int						Connect();
 	int						GetDirectory(const char * dir);

@@ -963,6 +963,7 @@ int FTPWindow::OnEvent(QueueOperation * queueOp, int code, void * data, bool isS
 				if (queueOp->GetResult() != -1) {
 					OnConnect(code);
 					OutMsg("Connected");
+					m_actionProc(GetHWND(), cActionSetState, static_cast<void*>(m_ftpSession->GetCurrentProfile()->GetName()), NULL, NULL, NULL);
 				} else {
 					OutErr("Unable to connect");
 					OnDisconnect(code);
@@ -975,6 +976,7 @@ int FTPWindow::OnEvent(QueueOperation * queueOp, int code, void * data, bool isS
 			if (isStart) {
 				break;
 			}
+			m_actionProc(GetHWND(), cActionSetState, NULL, NULL, NULL, NULL);
 			OutMsg("Disconnected");
 			OnDisconnect(code);
 			result = 1;
