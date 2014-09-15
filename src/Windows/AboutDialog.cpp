@@ -70,7 +70,7 @@ INT_PTR AboutDialog::OnInitDialog() {
 	const TCHAR * aboutMessage = 
 		TEXT("SynFTP, Copyright 2012-2014\r\n")
 		TEXT("Created by Harry\r\n")
-		TEXT("Modified by tbeu\r\n")
+		TEXT("Modified by Ramesh, tbeu\r\n")
 		TEXT("\r\n")
 		TEXT("Enjoy the comfort of transferring your files from your favorite editor! =)")
 		TEXT("\r\n\r\n")
