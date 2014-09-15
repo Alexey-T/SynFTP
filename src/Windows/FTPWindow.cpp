@@ -1181,6 +1181,7 @@ int FTPWindow::OnConnect(int code) {
 	TreeView_Select(m_treeview.GetHWND(), last->GetData(), TVGN_CARET);
 	m_ftpSession->GetDirectory(last->GetPath());
 
+	m_actionProc(GetHWND(), cActionSetState, static_cast<void*>(m_ftpSession->GetCurrentProfile()->GetName()), NULL, NULL, NULL);
 
 	SetToolbarState();
 
@@ -1194,6 +1195,8 @@ int FTPWindow::OnDisconnect(int /*code*/) {
 	if (m_ftpSettings->GetClearCache()) {
 		m_ftpSession->GetCurrentProfile()->GetCache()->ClearCurrentCache( m_ftpSettings->GetClearCachePermanent() );
 	}
+
+	m_actionProc(GetHWND(), cActionSetState, NULL, NULL, NULL, NULL);
 
 	SetToolbarState();
 
