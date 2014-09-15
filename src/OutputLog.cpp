@@ -21,7 +21,7 @@
 
 Output* _MainOutput = NULL;
 
-const WCHAR * ftpLogTitle = L"SynFTP Log";
+const WCHAR * ftpLogTitle = L"FTP Log";
 
 #define BGR(r,g,b) ((DWORD)(((BYTE)(b)|((WORD)((BYTE)(g))<<8))|(((DWORD)(BYTE)(r))<<16)))
 
