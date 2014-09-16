@@ -37,6 +37,7 @@ const WCHAR* cActionGetCaretPos        = L"GetCaret";
 const WCHAR* cActionSetCaretPos        = L"SetCaret";
 const WCHAR* cActionParseRegex         = L"ParseRE";
 const WCHAR* cActionSaveFile           = L"SaveFile";
+const WCHAR* cActionSetState           = L"SetState";
 
 const WCHAR* cActionNavigateToFile     = L"NavigateTo";
 const WCHAR* cActionRefreshFileList    = L"RefreshFileList";
