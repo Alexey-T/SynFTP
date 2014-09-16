@@ -153,12 +153,12 @@ END
 
 IDD_DIALOG_GLOBAL DIALOGEX 0, 0, 245, 128
 STYLE DS_3DLOOK | DS_CENTER | DS_MODALFRAME | DS_SHELLFONT | WS_VISIBLE | WS_BORDER | WS_CAPTION | WS_DLGFRAME | WS_POPUP | WS_SYSMENU
-CAPTION "Global settings"
+CAPTION "General settings"
 FONT 8, "Ms Shell Dlg 2", 400, 0, 1
 BEGIN
     LTEXT           "Global cache:", IDC_STATIC, 4, 4, 44, 8, SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_CACHE, 8, 12, 230, 14, ES_AUTOHSCROLL, WS_EX_LEFT
-    AUTOCHECKBOX    "Clear ENTIRE cache on disconnect (Use with care!)", IDC_CHECK_CLEARCACHE, 4, 30, 174, 8, 0, WS_EX_LEFT
+    AUTOCHECKBOX    "Clear entire cache on disconnect (use with care!)", IDC_CHECK_CLEARCACHE, 4, 30, 174, 8, 0, WS_EX_LEFT
     AUTOCHECKBOX    "Do not use the recycle bin (delete permanently)", IDC_CHECK_CLEARNORECYCLE, 12, 42, 170, 8, 0, WS_EX_LEFT
     LTEXT           "Master password (max 8 characters):", IDC_STATIC, 4, 56, 160, 8, SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_MASTERPASS, 8, 64, 230, 14, ES_AUTOHSCROLL | ES_PASSWORD, WS_EX_LEFT
