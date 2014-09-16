@@ -332,7 +332,7 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 					// Show the dialog to get input directory name from the user.
 					InputDialog id;
-					int res = id.Create(m_hwnd, TEXT("Open Directory"), TEXT("Enter directory name:"), TEXT(""));
+					int res = id.Create(m_hwnd, TEXT("Open directory"), TEXT("Enter directory name:"), TEXT(""));
 					if (res != 1) {
 						return 0;
 					}

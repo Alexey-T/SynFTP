@@ -44,7 +44,7 @@ const TBBUTTON defaultButtons[] = {
 const TCHAR* tooltips[] = {
 	TEXT("Connect/Disconnect"),
 	TEXT("-"),
-	TEXT("Open Directory"),
+	TEXT("Open directory"),
 	TEXT("Download file"),
 	TEXT("Upload file"),
 	TEXT("Refresh"),
@@ -53,7 +53,7 @@ const TCHAR* tooltips[] = {
 	//TEXT("Send quote"),
 	TEXT("-"),
 	TEXT("Settings"),
-	TEXT("Show log panel"),
+	TEXT("Show/Hide log panel"),
 	TEXT("About plugin")
 };
 
