@@ -859,8 +859,8 @@ int FTPWindow::CreateMenus() {
 	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_DOWNLOADFILE,TEXT("&Download file"));
 	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_DLDTOLOCATION,TEXT("&Save file as..."));
 	AppendMenu(m_popupFile,MF_SEPARATOR,0,0);
-	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_RENAMEFILE,TEXT("&Rename File"));
-	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_DELETEFILE,TEXT("D&elete File"));
+	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_RENAMEFILE,TEXT("&Rename file"));
+	AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_DELETEFILE,TEXT("D&elete file"));
 	//AppendMenu(m_popupFile,MF_SEPARATOR,0,0);
 	//AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_PERMISSIONFILE,TEXT("Permissions"));
 	//AppendMenu(m_popupFile,MF_STRING,IDM_POPUP_PROPSFILE,TEXT("&Properties"));
@@ -870,7 +870,7 @@ int FTPWindow::CreateMenus() {
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_NEWDIR,TEXT("Create new &directory"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_NEWFILE,TEXT("&Create new file"));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
-	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_RENAMEDIR,TEXT("&Rename Directory"));
+	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_RENAMEDIR,TEXT("&Rename directory"));
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_DELETEDIR,TEXT("D&elete directory"));
 	AppendMenu(m_popupDir,MF_SEPARATOR,0,0);
 	AppendMenu(m_popupDir,MF_STRING,IDM_POPUP_UPLOADFILE,TEXT("&Upload current file here"));
