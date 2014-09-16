@@ -64,16 +64,16 @@ extern const WCHAR* cActionSaveFtpFile;
 extern "C" BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved);
 
 //procedure SynInit(ADefaultIni: PWideChar; AActionProc: Pointer); stdcall;
-extern "C" __stdcall __declspec(dllexport) void SynInit(WCHAR * DefaultIni, void *ActionProc);
+extern "C" __stdcall void SynInit(WCHAR * DefaultIni, void *ActionProc);
 
 //function SynOpenForm(AParentWindow: THandle; var AWindow: THandle): Pointer; stdcall;
-extern "C" __stdcall __declspec(dllexport) HWND SynOpenForm(HWND Parent, HWND * Child);
+extern "C" __stdcall HWND SynOpenForm(HWND Parent, HWND * Child);
 
 //procedure SynCloseForm(AHandle: Pointer); stdcall;
-extern "C" __stdcall __declspec(dllexport) void SynCloseForm(HWND Child);
+extern "C" __stdcall void SynCloseForm(HWND Child);
 
 //function SynAction(AHandle: Pointer; AName: PWideChar; A1, A2, A3, A4: Pointer): Integer; stdcall;
 //WARNING: void* not safe, problems will occur on 64bit targets
-extern "C" __stdcall __declspec(dllexport) int SynAction(HWND Target, WCHAR * ActionName, void * A1, void * A2, void * A3, void * A4);
+extern "C" __stdcall int SynAction(HWND Target, WCHAR * ActionName, void * A1, void * A2, void * A3, void * A4);
 
 #endif //PLUGININTERFACE_H

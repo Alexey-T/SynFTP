@@ -118,7 +118,7 @@
         <Preprocessor Value="_UNICODE"/>
         <Preprocessor Value="LIBSSH_STATIC"/>
       </Compiler>
-      <Linker Options="../src/SynFTP.def" Required="yes">
+      <Linker Options="-Wl,--enable-stdcall-fixup -static ../src/SynFTP.def" Required="yes">
         <LibraryPath Value="../lib"/>
         <Library Value="Comdlg32"/>
         <Library Value="Comctl32"/>
@@ -183,7 +183,7 @@ add-symbol-file Debug/Plugins/SynFTP.dll</StartupCommands>
         <Preprocessor Value="_UNICODE"/>
         <Preprocessor Value="LIBSSH_STATIC"/>
       </Compiler>
-      <Linker Options="-static -O2 ../src/SynFTP.def" Required="yes">
+      <Linker Options="-Wl,--enable-stdcall-fixup -static -O2 ../src/SynFTP.def" Required="yes">
         <LibraryPath Value="../lib/"/>
         <Library Value="Comdlg32"/>
         <Library Value="Comctl32"/>
