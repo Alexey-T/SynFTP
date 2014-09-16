@@ -135,11 +135,11 @@ int FTPSession::TerminateSession() {
 	return 0;
 }
 
-bool FTPSession::IsConnected() {
+bool FTPSession::IsConnected() const {
 	return m_running;
 }
 
-const FTPProfile* FTPSession::GetCurrentProfile() {
+const FTPProfile* FTPSession::GetCurrentProfile() const {
 	return m_currentProfile;
 }
 
