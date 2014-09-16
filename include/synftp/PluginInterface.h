@@ -54,6 +54,7 @@ extern const WCHAR* cActionGetCaretPos;
 extern const WCHAR* cActionSetCaretPos;
 extern const WCHAR* cActionParseRegex;
 extern const WCHAR* cActionSaveFile;
+extern const WCHAR* cActionSetState;
 
 extern const WCHAR* cActionNavigateToFile;
 extern const WCHAR* cActionRefreshFileList;
