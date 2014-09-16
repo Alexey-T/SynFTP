@@ -35,6 +35,7 @@ const WCHAR* cActionRefreshFileList    = L"RefreshFileList";
 const WCHAR* cActionUpdateLang         = L"UpdateLang";
 const WCHAR* cActionRepaint            = L"Repaint";
 const WCHAR* cActionSaveFtpFile        = L"SaveFtpFile";
+const WCHAR* cActionSetState           = L"SetState";
 
 //Static store for actionproc parameter
 ACTIONPROC	actionProc;
