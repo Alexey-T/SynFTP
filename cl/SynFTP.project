@@ -128,8 +128,8 @@
         <Library Value="TinyXMLD"/>
         <Library Value="UTCPD"/>
         <Library Value="sshD"/>
-        <Library Value="ssl"/>
-        <Library Value="crypto"/>
+        <Library Value="sslD"/>
+        <Library Value="cryptoD"/>
         <Library Value="zlibD"/>
         <Library Value="gdi32"/>
         <Library Value="ws2_32"/>
