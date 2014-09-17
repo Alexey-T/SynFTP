@@ -65,8 +65,9 @@ int SynFTP::Start(HWND hParent, HWND hSyn, TCHAR * ConfigStore, ACTIONPROC Actio
 	lstrcpy(m_configStore, ConfigStore);
 	::PathAppend(m_configStore, TEXT("SynFTP"));
 	int res = PU::CreateLocalDir(m_configStore);
-	if (res == -1)
-		return -1;
+	//Special hack: do not check return value
+	//if (res == -1)
+	//	return -1;
 
 	_ConfigPath = new TCHAR[MAX_PATH];
 	lstrcpy(_ConfigPath, ConfigStore);
