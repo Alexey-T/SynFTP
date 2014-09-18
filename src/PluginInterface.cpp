@@ -46,11 +46,11 @@ const WCHAR* cActionRepaint            = L"Repaint";
 const WCHAR* cActionSaveFtpFile        = L"SaveFtpFile";
 const WCHAR* cActionSetColor           = L"SetColor";
 
-const int cColorId_Text         = 0x01;
-const int cColorId_Back         = 0x02;
-const int cColorId_LogNormal    = 0x04;
-const int cColorId_LogServer    = 0x08;
-const int cColorId_LogError     = 0x10;
+const int cColorId_Text         = 1;
+const int cColorId_Back         = 2;
+const int cColorId_LogNormal    = 3;
+const int cColorId_LogServer    = 4;
+const int cColorId_LogError     = 5;
 
 
 ACTIONPROC	actionProc;
