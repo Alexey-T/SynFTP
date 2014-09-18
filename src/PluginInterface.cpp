@@ -46,8 +46,8 @@ const WCHAR* cActionRepaint            = L"Repaint";
 const WCHAR* cActionSaveFtpFile        = L"SaveFtpFile";
 const WCHAR* cActionSetColor           = L"SetColor";
 
-const int cActionColorText = 0x01;
-const int cActionColorBack = 0x02;
+const int cColorId_Text = 0x01;
+const int cColorId_Back = 0x02;
 
 
 ACTIONPROC	actionProc;
