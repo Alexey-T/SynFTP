@@ -44,6 +44,10 @@ const WCHAR* cActionRefreshFileList    = L"RefreshFileList";
 const WCHAR* cActionUpdateLang         = L"UpdateLang";
 const WCHAR* cActionRepaint            = L"Repaint";
 const WCHAR* cActionSaveFtpFile        = L"SaveFtpFile";
+const WCHAR* cActionSetColor           = L"SetColor";
+
+const int cActionColorText = 0x01;
+const int cActionColorBack = 0x02;
 
 
 ACTIONPROC	actionProc;
