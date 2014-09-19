@@ -139,7 +139,6 @@ int SynAction(HWND child, WCHAR * name, void * A1, void * A2, void * A3, void * 
 	}
 	else if  (!lstrcmpW(cActionSetColor, name)) {
 		DWORD color = reinterpret_cast<DWORD>(A2);
-		DWORD c2 = (color >> 24) & 0xff;
 		if ((color >> 24) == 0xff)
 			color = ::GetSysColor(color & 0xffffff);
 		switch (reinterpret_cast<int>(A1)) {
