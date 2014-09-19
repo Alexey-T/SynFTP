@@ -37,7 +37,9 @@ public:
 	int						ShowFTPWindow();
 	int						HideFTPWindow();
 	int						FocusFTPWindow();
-	HWND					GetFTPWindowHandle() {return m_ftpWindow->GetHWND();};
+	HWND					GetFTPWindowHandle() const {
+								return m_ftpWindow ? m_ftpWindow->GetHWND() : NULL;
+							};
 	int						ShowAboutDialog();
 
 	int						OnSave(const TCHAR* path);
@@ -47,6 +49,27 @@ public:
 	int						SaveSettings();
 
 	static int				InitAll(HINSTANCE hInst);
+	
+	void					SetBackColor(DWORD color) {
+								if (m_ftpWindow)
+									m_ftpWindow->SetBackColor(color);
+							};
+	void					SetTextColor(DWORD color) {
+								if (m_ftpWindow)
+									m_ftpWindow->SetTextColor(color);
+							};
+	void					SetLogNormalColor(DWORD color) {
+								if (m_ftpWindow)
+									m_ftpWindow->SetLogNormalColor(color);
+							};
+	void					SetLogServerColor(DWORD color) {
+								if (m_ftpWindow)
+									m_ftpWindow->SetLogServerColor(color);
+							};
+	void					SetLogErrorColor(DWORD color) {
+								if (m_ftpWindow)
+									m_ftpWindow->SetLogErrorColor(color);
+							};
 private:
 	FTPSettings*			m_ftpSettings;
 	FTPSession*				m_ftpSession;
