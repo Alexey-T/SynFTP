@@ -40,8 +40,8 @@ public:
 							//message: %T is tchar (%s or %S), %s is char, %S is wchar_t
 	virtual int				OutVA(Output_Type type, const TCHAR * message, va_list vaList);
 	
-	void					SetLogNormalColor(DWORD color) {m_colorGreen = color;};
-	void					SetLogServerColor(DWORD color) {m_colorBlue = color;};
+	void					SetLogNormalColor(DWORD color) {m_colorBlue = color;};
+	void					SetLogServerColor(DWORD color) {m_colorGreen = color;};
 	void					SetLogErrorColor(DWORD color) {m_colorRed = color;};
 protected:
 	ACTIONPROC				m_actionProc;
