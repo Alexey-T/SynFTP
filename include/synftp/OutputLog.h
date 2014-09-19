@@ -33,17 +33,25 @@ public:
 	virtual					~OutputLog();
 	
 	virtual int 			Show(bool show);
-	virtual bool			IsVisible();
+	virtual bool			IsVisible() const {return m_shown;};
 
 	virtual int				RegisterActionProc(HWND handle, ACTIONPROC ActionProc);
 
 							//message: %T is tchar (%s or %S), %s is char, %S is wchar_t
 	virtual int				OutVA(Output_Type type, const TCHAR * message, va_list vaList);
+	
+	void					SetLogNormalColor(DWORD color) {m_colorGreen = color;};
+	void					SetLogServerColor(DWORD color) {m_colorBlue = color;};
+	void					SetLogErrorColor(DWORD color) {m_colorRed = color;};
 protected:
 	ACTIONPROC				m_actionProc;
 	HWND					m_actionHandle;
 	
 	bool					m_shown;
+private:
+	DWORD					m_colorRed;
+	DWORD					m_colorGreen;
+	DWORD					m_colorBlue;
 };
 
 #endif //OUTPUTLOG_H

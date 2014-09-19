@@ -28,7 +28,10 @@ const WCHAR * ftpLogTitle = L"FTP Log";
 OutputLog::OutputLog() :
 	m_actionProc(NULL),
 	m_actionHandle(NULL),
-	m_shown(false)
+	m_shown(false),
+	m_colorRed(RGB(255, 0, 0)),
+	m_colorGreen(RGB(0, 180, 0)),
+	m_colorBlue(RGB(0, 0, 180))
 {
 	_MainOutput = this;
 }
@@ -59,10 +62,6 @@ int OutputLog::Show(bool show) {
 	return (res == cSynOK)?0:-1;
 }
 
-bool OutputLog::IsVisible() {
-	return m_shown;
-}
-
 int OutputLog::OutVA(Output_Type type, const TCHAR * message, va_list vaList) {
 	if (!m_actionHandle || !m_actionProc)
 		return -1;
@@ -75,16 +74,16 @@ int OutputLog::OutVA(Output_Type type, const TCHAR * message, va_list vaList) {
 
 	SU::TSprintfV(msgBuffer, 1024, message, vaList);
 	
-	DWORD color = 0x00000000;
+	DWORD color;
 	switch(type) {
 		case Output_Client:
-			color = RGB(0, 180, 0);
+			color = m_colorGreen;
 			break;
 		case Output_System:
-			color = RGB(0, 0, 180);
+			color = m_colorBlue;
 			break;
 		case Output_Error:
-			color = RGB(255, 0, 0);
+			color = m_colorRed;
 			break;
 		default:
 			color = RGB(0, 180, 180);

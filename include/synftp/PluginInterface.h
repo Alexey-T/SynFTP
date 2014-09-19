@@ -42,6 +42,13 @@ const int cSynLogCmdAddLine = 1;
 const int cSynLogCmdClear = 2;
 const int cSynLogCmdSetCaption = 3;
 
+// Color IDs
+const int cColorId_Text = 1;
+const int cColorId_Back = 2;
+const int cColorId_LogNormal = 3;
+const int cColorId_LogServer = 4;
+const int cColorId_LogError = 5;
+
 //ACTIONPROC action names
 extern const WCHAR* cActionOpenFile;
 extern const WCHAR* cActionOpenFtpFile;
@@ -61,6 +68,7 @@ extern const WCHAR* cActionRefreshFileList;
 extern const WCHAR* cActionUpdateLang;
 extern const WCHAR* cActionRepaint;
 extern const WCHAR* cActionSaveFtpFile;
+extern const WCHAR* cActionSetColor;
 
 extern "C" BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved);
 

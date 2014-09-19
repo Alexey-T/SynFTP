@@ -46,13 +46,6 @@ const WCHAR* cActionRepaint            = L"Repaint";
 const WCHAR* cActionSaveFtpFile        = L"SaveFtpFile";
 const WCHAR* cActionSetColor           = L"SetColor";
 
-const int cColorId_Text         = 1;
-const int cColorId_Back         = 2;
-const int cColorId_LogNormal    = 3;
-const int cColorId_LogServer    = 4;
-const int cColorId_LogError     = 5;
-
-
 ACTIONPROC	actionProc;
 SynFTP		synFTP;
 
@@ -144,6 +137,36 @@ int SynAction(HWND child, WCHAR * name, void * A1, void * A2, void * A3, void * 
 		}
 		return cSynOK;
 	}
-	
+	else if  (!lstrcmpW(cActionSetColor, name)) {
+		DWORD color = reinterpret_cast<DWORD>(A2);
+		if ((color >> 24) == 0xff)
+			color = ::GetSysColor(color & 0xffffff);
+		switch (reinterpret_cast<int>(A1)) {
+			case cColorId_Text:
+				synFTP.SetTextColor(color);
+				break;
+
+			case cColorId_Back:
+				synFTP.SetBackColor(color);
+				break;
+				
+			case cColorId_LogNormal:
+				synFTP.SetLogNormalColor(color);
+				break;
+
+			case cColorId_LogServer:
+				synFTP.SetLogServerColor(color);
+				break;
+
+			case cColorId_LogError:
+				synFTP.SetLogErrorColor(color);
+				break;
+				
+			default:
+				break;
+		}
+		return cSynOK;
+	}
+
 	return cSynBadCmd;
 }

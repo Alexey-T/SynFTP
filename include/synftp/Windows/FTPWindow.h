@@ -72,6 +72,26 @@ public:
 	virtual int				StreamData(CStreamData * stream, int index);
 	virtual int				OnEndDnD();
 
+	void					SetBackColor(DWORD color) {
+								::SendMessage(m_treeview.GetHWND(), TVM_SETBKCOLOR, 0, static_cast<LPARAM>(color));
+								ListView_SetBkColor(m_queueWindow.GetHWND(), color);
+								ListView_SetTextBkColor(m_queueWindow.GetHWND(), color);
+								::InvalidateRect(m_queueWindow.GetHWND(), NULL, TRUE);
+							};
+	void					SetTextColor(DWORD color) {
+								::SendMessage(m_treeview.GetHWND(), TVM_SETTEXTCOLOR, 0, static_cast<LPARAM>(color));
+								ListView_SetTextColor(m_queueWindow.GetHWND(), color);
+								::InvalidateRect(m_queueWindow.GetHWND(), NULL, TRUE);
+							};
+	void					SetLogNormalColor(DWORD color) {
+								m_outputLog.SetLogNormalColor(color);
+							};
+	void					SetLogServerColor(DWORD color) {
+								m_outputLog.SetLogServerColor(color);
+							};
+	void					SetLogErrorColor(DWORD color) {
+								m_outputLog.SetLogErrorColor(color);
+							};
 protected:
 	virtual int				CreateMenus();
 	virtual int				SetToolbarState();
