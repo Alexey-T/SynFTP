@@ -22,12 +22,6 @@
 #include "symbols.h"
 
 //
-// Icon resources
-//
-IDI_ICON_FOLDERS   ICON           "bitmaps\\icon_folder.ico"
-IDI_ICON_MESSAGES  ICON           "bitmaps\\icon_messages.ico"
-
-//
 // Bitmap resources
 //
 IDB_BITMAP_ABORT   BITMAP         "bitmaps\\toolbar_abort.bmp"
