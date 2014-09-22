@@ -52,19 +52,22 @@ public :
 	virtual int				SetMenu(int cmdID, HMENU menu);
 
 	virtual int				DoPopop(POINT chevPoint);	//show the popup if buttons are hidden
-	virtual const TCHAR*	GetTooltip(int cmdID) const;
+	virtual LPCTSTR			GetTooltip(int cmdID) const;
 	virtual int				DoDropDown(int buttonID);
 
 	virtual int				AddToRebar(Rebar * rebar);
 private :
 	size_t					m_nrButtons;
-	TBBUTTON*				m_buttons;
+	LPTBBUTTON				m_buttons;
 	HMENU*					m_buttonMenus;
 	int						m_connectBitmapIndex;
 	int						m_disconnectBitmapIndex;
 
-	Rebar *					m_rebar;
+	Rebar*					m_rebar;
 	REBARBANDINFO			m_rbBand;
+	
+	HIMAGELIST				m_hImageList;
+	HIMAGELIST				m_hImageListD;
 };
 
 class Rebar : public Window {
