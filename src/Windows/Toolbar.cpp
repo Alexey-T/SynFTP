@@ -22,26 +22,22 @@
 #include "resource.h"
 #include "Commands.h"
 
-//NOTE: the bitmap IDs have to be translated by TB_ADDBITMAP
-const TBBUTTON defaultButtons[] = {
-	//iBitmap, idCommand, fsState, fsStyle, dwData, iString
-	{   IDB_BITMAP_CONNECT,  IDB_BUTTON_TOOLBAR_CONNECT,               0, TBSTYLE_DROPDOWN, {0,0}, 0, 0},
-	//IDB_BITMAP_DISCONNECT
-	{                    0,                           0, TBSTATE_ENABLED,      TBSTYLE_SEP, {0,0}, 0, 0},
-	{   IDB_BITMAP_OPENDIR, IDB_BUTTON_TOOLBAR_OPENDIR,  TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
-	{  IDB_BITMAP_DOWNLOAD, IDB_BUTTON_TOOLBAR_DOWNLOAD,               0,      BTNS_BUTTON, {0,0}, 0, 0},
-	{    IDB_BITMAP_UPLOAD,   IDB_BUTTON_TOOLBAR_UPLOAD,               0,      BTNS_BUTTON, {0,0}, 0, 0},
-	{   IDB_BITMAP_REFRESH,  IDB_BUTTON_TOOLBAR_REFRESH,               0,      BTNS_BUTTON, {0,0}, 0, 0},
-	{     IDB_BITMAP_ABORT,    IDB_BUTTON_TOOLBAR_ABORT,               0,      BTNS_BUTTON, {0,0}, 0, 0},
-	//{                    0,                           0, TBSTATE_ENABLED,      TBSTYLE_SEP, {0,0}, 0, 0},
-	//{IDB_BITMAP_RAWCOMMAND,   IDB_BUTTON_TOOLBAR_RAWCMD,               0,      BTNS_BUTTON, {0,0}, 0, 0},
-	{                    0,                           0, TBSTATE_ENABLED,      TBSTYLE_SEP, {0,0}, 0, 0},
-	{  IDB_BITMAP_SETTINGS, IDB_BUTTON_TOOLBAR_SETTINGS,               0, TBSTYLE_DROPDOWN, {0,0}, 0, 0},
-	{  IDB_BITMAP_MESSAGES, IDB_BUTTON_TOOLBAR_MESSAGES, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
-	{  IDB_BITMAP_INFO,        IDB_BUTTON_TOOLBAR_ABOUT, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0}
+static const TBBUTTON defaultButtons[] = {
+	//iBitmap, idCommand, fsState, fsStyle, bReserved, dwData, iString
+	{ MAKELONG(0, 0),  IDB_BUTTON_TOOLBAR_CONNECT,               0, TBSTYLE_DROPDOWN, {0,0}, 0, 0},
+	{              0,                           0, TBSTATE_ENABLED,      TBSTYLE_SEP, {0,0}, 0, 0},
+	{ MAKELONG(1, 0), IDB_BUTTON_TOOLBAR_OPENDIR,  TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{ MAKELONG(2, 0), IDB_BUTTON_TOOLBAR_DOWNLOAD, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{ MAKELONG(3, 0),   IDB_BUTTON_TOOLBAR_UPLOAD, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{ MAKELONG(4, 0),  IDB_BUTTON_TOOLBAR_REFRESH, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{ MAKELONG(5, 0),    IDB_BUTTON_TOOLBAR_ABORT, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{              0,                           0, TBSTATE_ENABLED,      TBSTYLE_SEP, {0,0}, 0, 0},
+	{ MAKELONG(6, 0), IDB_BUTTON_TOOLBAR_SETTINGS,               0, TBSTYLE_DROPDOWN, {0,0}, 0, 0},
+	{ MAKELONG(7, 0), IDB_BUTTON_TOOLBAR_MESSAGES, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0},
+	{ MAKELONG(8, 0),    IDB_BUTTON_TOOLBAR_ABOUT, TBSTATE_ENABLED,      BTNS_BUTTON, {0,0}, 0, 0}
 };
 
-const TCHAR* tooltips[] = {
+static LPCTSTR tooltips[] = {
 	TEXT("Connect/Disconnect"),
 	TEXT("-"),
 	TEXT("Open directory"),
@@ -49,15 +45,13 @@ const TCHAR* tooltips[] = {
 	TEXT("Upload file"),
 	TEXT("Refresh"),
 	TEXT("Abort current operation"),
-	//TEXT("-"),
-	//TEXT("Send quote"),
 	TEXT("-"),
 	TEXT("Settings"),
 	TEXT("Show/Hide log panel"),
 	TEXT("About plugin")
 };
 
-const size_t nrDefaultButtons = sizeof(defaultButtons)/sizeof(defaultButtons[0]);
+static const size_t nrDefaultButtons = sizeof(defaultButtons)/sizeof(defaultButtons[0]);
 
 Toolbar::Toolbar() :
 	Window(NULL, TOOLBARCLASSNAME),
@@ -66,7 +60,9 @@ Toolbar::Toolbar() :
 	m_buttonMenus(NULL),
 	m_connectBitmapIndex(-1),
 	m_disconnectBitmapIndex(-1),
-	m_rebar(NULL)
+	m_rebar(NULL),
+	m_hImageList(NULL),
+	m_hImageListD(NULL)
 {
 	m_exStyle = WS_EX_PALETTEWINDOW;
 	m_style = WS_CHILD|/*WS_VISIBLE|*/WS_CLIPCHILDREN|WS_CLIPSIBLINGS|TBSTYLE_TOOLTIPS|CCS_TOP|TBSTYLE_FLAT|BTNS_AUTOSIZE|CCS_NOPARENTALIGN|CCS_NORESIZE|CCS_NODIVIDER;
@@ -80,38 +76,85 @@ int Toolbar::Create(HWND hParent) {
 	if (res == -1)
 		return -1;
 
-//	HRESULT hres = PF::SetWindowTheme(m_hwnd, L"", L"");
-	
-	SendMessage(m_hwnd, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0);
-	SendMessage(m_hwnd, TB_SETBITMAPSIZE, 0, (LPARAM)MAKELONG(16, 16));
-	SendMessage(m_hwnd, TB_SETBUTTONSIZE, 0, (LPARAM)MAKELONG(18, 18));
-	SendMessage(m_hwnd, TB_SETEXTENDEDSTYLE, 0, (LPARAM)TBSTYLE_EX_HIDECLIPPEDBUTTONS);
+	::SendMessage(m_hwnd, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0);
+	::SendMessage(m_hwnd, TB_SETBITMAPSIZE, 0, (LPARAM)MAKELONG(16, 16));
+	::SendMessage(m_hwnd, TB_SETBUTTONSIZE, 0, (LPARAM)MAKELONG(18, 18));
+	::SendMessage(m_hwnd, TB_SETEXTENDEDSTYLE, 0, (LPARAM)TBSTYLE_EX_HIDECLIPPEDBUTTONS);
 
-	TBADDBITMAP ab;
-	ab.hInst = m_hInstance;
-
-	int imgnr = 0;
-	m_buttons = new TBBUTTON[nrDefaultButtons];
+	m_buttons = const_cast<LPTBBUTTON>(&defaultButtons[0]);
 	m_buttonMenus = new HMENU[nrDefaultButtons];
 	m_nrButtons = nrDefaultButtons;
 
 	for(size_t i = 0; i < nrDefaultButtons; i++) {
-		m_buttons[i] = defaultButtons[i];
 		m_buttonMenus[i] = NULL;
-		ab.nID = m_buttons[i].iBitmap;
-		if (ab.nID != 0)
-			imgnr = SendMessage(m_hwnd, TB_ADDBITMAP, (WPARAM) 1, (LPARAM) &ab);
-		else
-			imgnr = 0;
-		m_buttons[i].iBitmap = imgnr;
 	}
 
-	m_connectBitmapIndex = m_buttons[0].iBitmap;
-	ab.nID = IDB_BITMAP_DISCONNECT;
-	m_disconnectBitmapIndex = ::SendMessage(m_hwnd, TB_ADDBITMAP, (WPARAM) 1, (LPARAM) &ab);
+	::SendMessage(m_hwnd, TB_ADDBUTTONS, (WPARAM)nrDefaultButtons, (LPARAM)m_buttons);
+	::SendMessage(m_hwnd, TB_AUTOSIZE, 0, 0);
 
-	SendMessage(m_hwnd, TB_ADDBUTTONS, (WPARAM)nrDefaultButtons, (LPARAM)m_buttons);
-	SendMessage(m_hwnd, TB_AUTOSIZE, 0, 0);
+	m_hImageList = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
+	if (!m_hImageList)
+		return -1;
+
+	HBITMAP hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_CONNECT));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(192,192,192));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_OPENDIR));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DOWNLOAD));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_UPLOAD));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_REFRESH));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_ABORT));
+	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	HBITMAP hbmpS = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_SETTINGS));
+	ImageList_AddMasked(m_hImageList, hbmpS, RGB(192,192,192));
+	HBITMAP hbmpM = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_MESSAGES));
+	ImageList_AddMasked(m_hImageList, hbmpM, RGB(192,192,192));
+	HBITMAP hbmpI = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_INFO));
+	ImageList_AddMasked(m_hImageList, hbmpI, RGB(0,0,0));
+	::SendMessage(m_hwnd, TB_SETIMAGELIST, 0, (LPARAM)m_hImageList);
+
+	m_hImageListD = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
+	if (!m_hImageListD) {
+		::DeleteObject(hbmpS);
+		::DeleteObject(hbmpM);
+		::DeleteObject(hbmpI);
+		return -1;
+	}
+
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DISCONNECT));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(192,192,192));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_OPENDIR_GR));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DOWNLOAD_GR));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_UPLOAD_GR));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_REFRESH_GR));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_ABORT_GR));
+	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	::DeleteObject(hbmp);
+	ImageList_AddMasked(m_hImageListD, hbmpS, RGB(192,192,192));
+	::DeleteObject(hbmpS);
+	ImageList_AddMasked(m_hImageListD, hbmpM, RGB(192,192,192));
+	::DeleteObject(hbmpM);
+	ImageList_AddMasked(m_hImageListD, hbmpI, RGB(0,0,0));
+	::DeleteObject(hbmpI);
+	::SendMessage(m_hwnd, TB_SETDISABLEDIMAGELIST, 0, (LPARAM)m_hImageListD);
 
 	return 0;
 }
@@ -124,7 +167,18 @@ int Toolbar::Destroy() {
 
 	int ret = Window::Destroy();
 
-	delete [] m_buttons;
+	if (m_hImageList) {
+		ImageList_RemoveAll(m_hImageList);
+		ImageList_Destroy(m_hImageList);
+		m_hImageList = NULL;
+	}
+	if (m_hImageListD) {
+		ImageList_RemoveAll(m_hImageListD);
+		ImageList_Destroy(m_hImageListD);
+		m_hImageListD = NULL;
+	}
+	if (m_buttonMenus)
+		delete [] m_buttonMenus;
 
 	return ret;
 }
@@ -233,7 +287,7 @@ int Toolbar::DoPopop(POINT chevPoint) {
 	return 0;
 }
 
-const TCHAR* Toolbar::GetTooltip(int cmdID) const {
+LPCTSTR Toolbar::GetTooltip(int cmdID) const {
 	int index = ::SendMessage(m_hwnd, TB_COMMANDTOINDEX, cmdID, 0);
 	if (index == -1) {
 		return NULL;
