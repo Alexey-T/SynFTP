@@ -35,7 +35,6 @@ SynFTP::SynFTP() :
 	m_ftpSettings(NULL),
 	m_ftpSession(NULL),
 	m_ftpWindow(NULL),
-	m_activeSession(false),
 	m_configStore(NULL)
 {
 	m_ftpSettings = new FTPSettings();
@@ -115,12 +114,6 @@ int SynFTP::Start(HWND hParent, HWND hSyn, TCHAR * ConfigStore, ACTIONPROC Actio
 int SynFTP::Stop() {
 	SaveSettings();
 
-	//delete m_ftpWindow;
-	//delete m_ftpSession;
-
-	m_ftpWindow = NULL;
-	m_ftpSession = NULL;
-
 	if (_HostsFile) {
 		delete [] _HostsFile;
 		_HostsFile = NULL;
@@ -129,6 +122,15 @@ int SynFTP::Stop() {
 	if (_ConfigPath) {
 		delete [] _ConfigPath;
 		_ConfigPath = NULL;
+	}
+
+	if (m_ftpSession) {
+		m_ftpSession->Deinit();
+		delete m_ftpSession;
+	}
+	if (m_ftpWindow) {
+		m_ftpWindow->Destroy();
+		delete m_ftpWindow;
 	}
 
 	PF::Deinit();
