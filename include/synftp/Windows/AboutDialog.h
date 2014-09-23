@@ -33,8 +33,6 @@ protected:
 
 	virtual INT_PTR			OnCommand(int ctrlId, int notifCode, HWND idHwnd);
 	virtual INT_PTR			OnNotify(NMHDR * pnmh);
-
-	HICON					m_donateIcon;
 };
 
 #endif //ABOUTDIALOG_H
