@@ -58,11 +58,7 @@ Toolbar::Toolbar() :
 	m_nrButtons(0),
 	m_buttons(NULL),
 	m_buttonMenus(NULL),
-	m_connectBitmapIndex(-1),
-	m_disconnectBitmapIndex(-1),
-	m_rebar(NULL),
-	m_hImageList(NULL),
-	m_hImageListD(NULL)
+	m_rebar(NULL)
 {
 	m_exStyle = WS_EX_PALETTEWINDOW;
 	m_style = WS_CHILD|/*WS_VISIBLE|*/WS_CLIPCHILDREN|WS_CLIPSIBLINGS|TBSTYLE_TOOLTIPS|CCS_TOP|TBSTYLE_FLAT|BTNS_AUTOSIZE|CCS_NOPARENTALIGN|CCS_NORESIZE|CCS_NODIVIDER;
@@ -76,7 +72,7 @@ int Toolbar::Create(HWND hParent) {
 	if (res == -1)
 		return -1;
 
-	::SendMessage(m_hwnd, TB_BUTTONSTRUCTSIZE, (WPARAM) sizeof(TBBUTTON), 0);
+	::SendMessage(m_hwnd, TB_BUTTONSTRUCTSIZE, (WPARAM)sizeof(TBBUTTON), 0);
 	::SendMessage(m_hwnd, TB_SETBITMAPSIZE, 0, (LPARAM)MAKELONG(16, 16));
 	::SendMessage(m_hwnd, TB_SETBUTTONSIZE, 0, (LPARAM)MAKELONG(18, 18));
 	::SendMessage(m_hwnd, TB_SETEXTENDEDSTYLE, 0, (LPARAM)TBSTYLE_EX_HIDECLIPPEDBUTTONS);
@@ -92,69 +88,69 @@ int Toolbar::Create(HWND hParent) {
 	::SendMessage(m_hwnd, TB_ADDBUTTONS, (WPARAM)nrDefaultButtons, (LPARAM)m_buttons);
 	::SendMessage(m_hwnd, TB_AUTOSIZE, 0, 0);
 
-	m_hImageList = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
-	if (!m_hImageList)
+	HIMAGELIST hImageList = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
+	if (!hImageList)
 		return -1;
 
 	HBITMAP hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_CONNECT));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(192,192,192));
+	ImageList_AddMasked(hImageList, hbmp, RGB(192,192,192));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_OPENDIR));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageList, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DOWNLOAD));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageList, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_UPLOAD));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageList, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_REFRESH));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageList, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_ABORT));
-	ImageList_AddMasked(m_hImageList, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageList, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	HBITMAP hbmpS = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_SETTINGS));
-	ImageList_AddMasked(m_hImageList, hbmpS, RGB(192,192,192));
+	ImageList_AddMasked(hImageList, hbmpS, RGB(192,192,192));
 	HBITMAP hbmpM = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_MESSAGES));
-	ImageList_AddMasked(m_hImageList, hbmpM, RGB(192,192,192));
+	ImageList_AddMasked(hImageList, hbmpM, RGB(192,192,192));
 	HBITMAP hbmpI = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_INFO));
-	ImageList_AddMasked(m_hImageList, hbmpI, RGB(0,0,0));
-	::SendMessage(m_hwnd, TB_SETIMAGELIST, 0, (LPARAM)m_hImageList);
+	ImageList_AddMasked(hImageList, hbmpI, RGB(0,0,0));
+	::SendMessage(m_hwnd, TB_SETIMAGELIST, 0, (LPARAM)hImageList);
 
-	m_hImageListD = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
-	if (!m_hImageListD) {
+	HIMAGELIST hImageListD = ImageList_Create(16, 16, ILC_COLOR32|ILC_MASK, 0, 0);
+	if (!hImageListD) {
 		::DeleteObject(hbmpS);
 		::DeleteObject(hbmpM);
 		::DeleteObject(hbmpI);
 		return -1;
 	}
 
-	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DISCONNECT));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(192,192,192));
+	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_CONNECT_GR));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(192,192,192));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_OPENDIR_GR));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_DOWNLOAD_GR));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_UPLOAD_GR));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_REFRESH_GR));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
 	hbmp = ::LoadBitmap(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_ABORT_GR));
-	ImageList_AddMasked(m_hImageListD, hbmp, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmp, RGB(0,0,0));
 	::DeleteObject(hbmp);
-	ImageList_AddMasked(m_hImageListD, hbmpS, RGB(192,192,192));
+	ImageList_AddMasked(hImageListD, hbmpS, RGB(192,192,192));
 	::DeleteObject(hbmpS);
-	ImageList_AddMasked(m_hImageListD, hbmpM, RGB(192,192,192));
+	ImageList_AddMasked(hImageListD, hbmpM, RGB(192,192,192));
 	::DeleteObject(hbmpM);
-	ImageList_AddMasked(m_hImageListD, hbmpI, RGB(0,0,0));
+	ImageList_AddMasked(hImageListD, hbmpI, RGB(0,0,0));
 	::DeleteObject(hbmpI);
-	::SendMessage(m_hwnd, TB_SETDISABLEDIMAGELIST, 0, (LPARAM)m_hImageListD);
+	::SendMessage(m_hwnd, TB_SETDISABLEDIMAGELIST, 0, (LPARAM)hImageListD);
 
 	return 0;
 }
@@ -165,20 +161,20 @@ int Toolbar::Destroy() {
 		m_rebar = NULL;
 	}
 
-	int ret = Window::Destroy();
-
-	if (m_hImageList) {
-		ImageList_RemoveAll(m_hImageList);
-		ImageList_Destroy(m_hImageList);
-		m_hImageList = NULL;
+	HIMAGELIST hImageList = reinterpret_cast<HIMAGELIST>(::SendMessage(m_hwnd, TB_GETIMAGELIST, 0, 0));
+	if (hImageList) {
+		ImageList_RemoveAll(hImageList);
+		ImageList_Destroy(hImageList);
 	}
-	if (m_hImageListD) {
-		ImageList_RemoveAll(m_hImageListD);
-		ImageList_Destroy(m_hImageListD);
-		m_hImageListD = NULL;
+	HIMAGELIST hImageListD = reinterpret_cast<HIMAGELIST>(::SendMessage(m_hwnd, TB_GETDISABLEDIMAGELIST, 0, 0));
+	if (hImageListD) {
+		ImageList_RemoveAll(hImageListD);
+		ImageList_Destroy(hImageListD);
 	}
 	if (m_buttonMenus)
 		delete [] m_buttonMenus;
+
+	int ret = Window::Destroy();
 
 	return ret;
 }
@@ -190,6 +186,19 @@ int Toolbar::Enable(int cmdID, bool doEnable) const {
 		return -1;
 
 	return 0;
+}
+
+int Toolbar::SetConnect(bool bConnect) const {
+	BOOL ret = -1;
+	HIMAGELIST hImageList = reinterpret_cast<HIMAGELIST>(::SendMessage(m_hwnd, TB_GETIMAGELIST, 0, 0));
+	if (hImageList) {
+		HBITMAP hbmp = ::LoadBitmap(m_hInstance,
+			bConnect ? MAKEINTRESOURCE(IDB_BITMAP_CONNECT) : MAKEINTRESOURCE(IDB_BITMAP_DISCONNECT));
+		BOOL ret = ImageList_Replace(hImageList, 0, hbmp, NULL);
+		::DeleteObject(hbmp);
+	}
+
+	return ret != 0 ? 0 : -1;
 }
 
 int Toolbar::GetWidth() const {
@@ -205,8 +214,8 @@ int Toolbar::GetWidth() const {
 }
 
 int Toolbar::GetHeight() const {
-	DWORD size = (DWORD)SendMessage(m_hwnd, TB_GETBUTTONSIZE, 0, 0);
-    DWORD padding = (DWORD)SendMessage(m_hwnd, TB_GETPADDING, 0,0);
+	DWORD size = static_cast<DWORD>(::SendMessage(m_hwnd, TB_GETBUTTONSIZE, 0, 0));
+    DWORD padding = static_cast<DWORD>(::SendMessage(m_hwnd, TB_GETPADDING, 0,0));
 	int totalHeight = HIWORD(size) + HIWORD(padding);
 
 	return totalHeight;
@@ -222,7 +231,7 @@ bool Toolbar::GetChecked(int cmdID) const {
 }
 
 int Toolbar::SetChecked(int cmdID, BOOL check) {
-	LRESULT ret = SendMessage(m_hwnd, TB_CHECKBUTTON, (WPARAM)cmdID, (LPARAM)MAKELONG(check, 0));
+	LRESULT ret = ::SendMessage(m_hwnd, TB_CHECKBUTTON, (WPARAM)cmdID, (LPARAM)MAKELONG(check, 0));
 
 	if (ret == FALSE)
 		return -1;

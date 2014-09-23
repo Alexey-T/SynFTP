@@ -42,6 +42,7 @@ public :
 	virtual int				Destroy();
 
 	virtual int				Enable(int cmdID, bool enabled) const;
+	virtual int				SetConnect(bool bConnect) const;
 
 	virtual int				GetWidth() const;
 	virtual int				GetHeight() const;
@@ -60,8 +61,6 @@ private :
 	size_t					m_nrButtons;
 	LPTBBUTTON				m_buttons;
 	HMENU*					m_buttonMenus;
-	int						m_connectBitmapIndex;
-	int						m_disconnectBitmapIndex;
 
 	Rebar*					m_rebar;
 	REBARBANDINFO			m_rbBand;

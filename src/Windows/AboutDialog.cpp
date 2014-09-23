@@ -26,8 +26,7 @@
 #include <zlib.h>
 
 AboutDialog::AboutDialog() :
-	Dialog(IDD_DIALOG_ABOUT),
-	m_donateIcon(NULL)
+	Dialog(IDD_DIALOG_ABOUT)
 {
 }
 
@@ -35,8 +34,6 @@ AboutDialog::~AboutDialog() {
 }
 
 int AboutDialog::Create(HWND hParent) {
-	m_donateIcon = (HICON)::LoadImage(m_hInstance, MAKEINTRESOURCE(IDB_BITMAP_PAYPAL), IMAGE_BITMAP, 16, 16, LR_LOADMAP3DCOLORS);
-
 	int res = Dialog::Create(hParent, true, TEXT("About SynFTP"));
 	if (res == -1)
 		return -1;
@@ -90,8 +87,6 @@ INT_PTR AboutDialog::OnInitDialog() {
 	::SetFocus(GetDlgItem(m_hwnd, IDC_BUTTON_CLOSE));
 	::SendMessage(GetDlgItem(m_hwnd, IDC_EDIT_ABOUTMSG), EM_SETSEL, 0, 0);
 
-	::SendMessage(GetDlgItem(m_hwnd, IDC_BUTTON_DONATE), BM_SETIMAGE, (WPARAM)IMAGE_BITMAP, (LPARAM)m_donateIcon);
-
 	Dialog::OnInitDialog();
 
 	return FALSE;
@@ -103,14 +98,6 @@ INT_PTR AboutDialog::OnCommand(int ctrlId, int notifCode, HWND idHwnd) {
 	switch(ctrlId) {
 		case IDC_BUTTON_CLOSE: {
 			EndDialog(m_hwnd, 0);
-			result = TRUE;
-			break; }
-		case IDC_BUTTON_VISIT: {
-			ShellExecute(NULL, TEXT("open"), TEXT("http://sourceforge.net/projects/nppftp"), NULL, NULL, SW_SHOWNORMAL);
-			result = TRUE;
-			break; }
-		case IDC_BUTTON_DONATE: {
-			ShellExecute(NULL, TEXT("open"), TEXT("http://sourceforge.net/projects/nppftp/donate"), NULL, NULL, SW_SHOWNORMAL);
 			result = TRUE;
 			break; }
 		default: {

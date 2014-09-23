@@ -901,11 +901,9 @@ int FTPWindow::CreateMenus() {
 }
 
 int FTPWindow::SetToolbarState() {
-	if (m_vProfiles && m_vProfiles->size() > 0 && !m_connecting) {
-		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_CONNECT, true);
-	} else {
-		m_toolbar.Enable(IDB_BUTTON_TOOLBAR_CONNECT, false);
-	}
+	bool bIsConnected = m_ftpSession ? m_ftpSession->IsConnected() : false;
+	m_toolbar.SetConnect(!bIsConnected);
+	m_toolbar.Enable(IDB_BUTTON_TOOLBAR_CONNECT, m_vProfiles && m_vProfiles->size() > 0 && !m_connecting);
 	m_toolbar.Enable(IDB_BUTTON_TOOLBAR_ABORT, m_busy);
 	m_toolbar.Enable(IDB_BUTTON_TOOLBAR_RAWCMD, false);
 	m_toolbar.Enable(IDB_BUTTON_TOOLBAR_SETTINGS, true);
