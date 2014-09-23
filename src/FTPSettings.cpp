@@ -40,6 +40,7 @@ FTPSettings::FTPSettings() :
 }
 
 FTPSettings::~FTPSettings() {
+	m_globalCache.Clear();
 	SU::FreeTChar(m_globalCachePath);
 }
 

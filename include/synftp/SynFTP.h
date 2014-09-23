@@ -76,7 +76,6 @@ private:
 	FTPWindow*				m_ftpWindow;
 
 	vProfile				m_profiles;
-	bool					m_activeSession;
 
 	TCHAR*					m_configStore;
 	

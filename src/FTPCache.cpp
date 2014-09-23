@@ -22,7 +22,7 @@
 #include <algorithm>
 
 const char * FTPCache::CacheElem = "Cache";
-const int PathCacheSize = MAX_PATH+10;	//paths generally do not exceed MAX_PATH, but if it happens often buffer reallocation may need some profiling (e.g. set ceiling instead of just allocating)
+static const int PathCacheSize = MAX_PATH+10;	//paths generally do not exceed MAX_PATH, but if it happens often buffer reallocation may need some profiling (e.g. set ceiling instead of just allocating)
 
 FTPCache::FTPCache() :
 	m_cacheParent(NULL)
