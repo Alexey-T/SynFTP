@@ -194,7 +194,10 @@ int Toolbar::SetConnect(bool bConnect) const {
 	if (hImageList) {
 		HBITMAP hbmp = ::LoadBitmap(m_hInstance,
 			bConnect ? MAKEINTRESOURCE(IDB_BITMAP_CONNECT) : MAKEINTRESOURCE(IDB_BITMAP_DISCONNECT));
-		BOOL ret = ImageList_Replace(hImageList, 0, hbmp, NULL);
+		HBITMAP hbmpM = ::LoadBitmap(m_hInstance,
+			bConnect ? MAKEINTRESOURCE(IDB_BITMAP_CONNECT_MASK) : MAKEINTRESOURCE(IDB_BITMAP_DISCONNECT_MASK));
+		BOOL ret = ImageList_Replace(hImageList, 0, hbmp, hbmpM);
+		::DeleteObject(hbmpM);
 		::DeleteObject(hbmp);
 	}
 
