@@ -301,13 +301,13 @@ int FTPClientWrapperSSH::SendFile(HANDLE hFile, const char * ftpfile) {
 	char buf[bufsize];
 	DWORD len = 0;
 	long totalSent = 0;
-	long totalSize = -1;
+	//long totalSize = -1;
 
 	DWORD highsize;
 	DWORD lowsize = ::GetFileSize(hFile, &highsize);
 	//totalSize = ((long)highsize)<<32;
 	//totalSize |= lowsize;
-	totalSize = lowsize;
+	long totalSize = lowsize;
 
 	sfile = sftp_open(m_sftpsession, ftpfile, (O_WRONLY|O_CREAT|O_TRUNC), 0664);	//default rw-rw-r-- permission
 	if (sfile == NULL) {

@@ -149,12 +149,10 @@ LRESULT Window::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 			break; }
 		case WM_QUIT: {
 			Destroy();
-			return TRUE;
-			break; }
+			return TRUE; }
 		case WM_DESTROY: {
 			PostQuitMessage(0);
-			return TRUE;
-			break; }
+			return TRUE; }
 		default:
 			result = ::DefWindowProc(m_hwnd, uMsg, wParam, lParam);
 	}

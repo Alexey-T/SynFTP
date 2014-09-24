@@ -14,7 +14,7 @@
 // =================================================================
 // Ultimate TCP/IP v4.2
 // This software along with its related components, documentation and files ("The Libraries")
-// is © 1994-2007 The Code Project (1612916 Ontario Limited) and use of The Libraries is
+// is Â© 1994-2007 The Code Project (1612916 Ontario Limited) and use of The Libraries is
 // governed by a software license agreement ("Agreement").  Copies of the Agreement are
 // available at The Code Project (www.codeproject.com), as part of the package you downloaded
 // to obtain this file, or directly from our office.  For a copy of the license governing
@@ -95,7 +95,7 @@ public:
     virtual ~CUT_StringList();
 
 	// Assigment operator
-	CUT_StringList &operator=(const CUT_StringList strlist);
+	CUT_StringList &operator=(const CUT_StringList& strlist);
     
     // add a new string to the doubly linked list of strings
     BOOL AddString(LPCSTR lpszString);
@@ -141,7 +141,7 @@ public:
     virtual ~CUT_TStringList();
 
 	// Assigment operator
-	CUT_TStringList &operator=(const CUT_TStringList strlist);
+	CUT_TStringList &operator=(const CUT_TStringList& strlist);
     
     // add a new string to the doubly linked list of strings
     BOOL AddString(LPCTSTR lpszString);

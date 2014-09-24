@@ -175,11 +175,9 @@ int FTPSession::GetDirectoryHierarchy(const char * inputDir) {
     // examined in the below vector.
     std::vector<char*> parentDirs;
 
-    int i;
     int childCount;
     char currentPath[MAX_PATH];
     FileObject* currentFileObj = m_rootObject;
-    FileObject* tmp;
 
     strcpy( currentPath, "/" );
 
