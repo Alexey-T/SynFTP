@@ -94,17 +94,14 @@ int SynFTP::Start(HWND hParent, HWND hSyn, TCHAR * ConfigStore, ACTIONPROC Actio
 	res = m_ftpSession->Init(m_ftpWindow, m_ftpSettings);
 	if (res == -1) {
 		m_ftpWindow->Destroy();
+		delete m_ftpWindow;
+		m_ftpWindow = NULL;
 		return -1;
 	}
 
-	res = m_ftpWindow->Init(m_ftpSession, &m_profiles, m_ftpSettings);
-	if (res == -1) {
-		m_ftpSession->Deinit();
-		m_ftpWindow->Destroy();
-		return -1;
-	}
+	/* res = */ m_ftpWindow->Init(m_ftpSession, &m_profiles, m_ftpSettings);
 
-	res = m_ftpSession->SetCertificates(&m_certificates);
+	/* res = */ m_ftpSession->SetCertificates(&m_certificates);
 
 	OutMsg("[SynFTP] Everything initialized");
 
@@ -125,12 +122,13 @@ int SynFTP::Stop() {
 	}
 
 	if (m_ftpSession) {
-		m_ftpSession->Deinit();
 		delete m_ftpSession;
+		m_ftpSession = NULL;
 	}
 	if (m_ftpWindow) {
 		m_ftpWindow->Destroy();
 		delete m_ftpWindow;
+		m_ftpWindow = NULL;
 	}
 
 	PF::Deinit();
