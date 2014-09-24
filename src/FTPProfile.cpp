@@ -545,7 +545,7 @@ vProfile FTPProfile::LoadProfiles(const TiXmlElement * profilesElem) {
 	return profiles;
 }
 
-TiXmlElement* FTPProfile::SaveProfiles(const vProfile profiles) {
+TiXmlElement* FTPProfile::SaveProfiles(const vProfile& profiles) {
 	TiXmlElement * profilesElem = new TiXmlElement(FTPProfile::ProfilesElement);
 	size_t count = profiles.size();
 	for(size_t i = 0; i < count; i++) {

@@ -28,7 +28,7 @@ typedef std::deque<QueueOperation*> VQueue;
 /*
 Some notes about threading:
 - It is very well possible for End/Remove messages to be sent twice
-- If Terminate() is called on a queueoperation, it will not sendn otifications to another thread, but it will to the same thread
+- If Terminate() is called on a queueoperation, it will not send notifications to another thread, but it will to the same thread
 */
 
 class FTPQueue : public ProgressMonitor {

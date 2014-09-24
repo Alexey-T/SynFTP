@@ -90,8 +90,7 @@ INT_PTR SettingsDialog::OnCommand(int ctrlId, int notifCode, HWND idHwnd) {
 			}
 			break; }
 		default: {
-			return Dialog::OnCommand(ctrlId, notifCode, idHwnd);
-			break; }
+			return Dialog::OnCommand(ctrlId, notifCode, idHwnd); }
 	}
 
 	return TRUE;
