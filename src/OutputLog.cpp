@@ -94,12 +94,15 @@ int OutputLog::OutVA(Output_Type type, const TCHAR * message, va_list vaList) {
 	//0 is for the color, no direct C/C++ counterpart for TColor?
 	//If color becomes supported, use Output_Type for color determinisation
 	
-	delete [] msgBuffer;
-	
 	if (type == Output_Error) {
-		Show(true);
+		// Hack for https://github.com/Alexey-T/SynFTP/issues/29
+		if (::wcsncmp(msgBuffer, L"[FTPS] Certificate invalid (", 28)) {
+			Show(true);
+		}
 	}
-	
+
+	delete [] msgBuffer;
+
 	return (res == cSynOK)?0:-1;
 }
 
