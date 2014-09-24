@@ -76,8 +76,8 @@ long CUT_DataSource::Find(LPCSTR szStrToFind, size_t nStartOffset, BOOL bCaseSen
 	// Read data and try to find the string
 	while( (nBytesRead = Read(szBuffer, FIND_BUFFER_SIZE - 1)) > nStrLength ) {
 
-		// Terminate buffer with NULL
-		szBuffer[nBytesRead] = NULL;
+		// Terminate buffer
+		szBuffer[nBytesRead] = '\0';
 
 		// Convert to upper case if case insensitive search
 		if(!bCaseSensitive)

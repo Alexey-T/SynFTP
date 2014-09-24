@@ -30,7 +30,6 @@ class FTPProfile : public RefObject {
 public:
 	static const char*		ProfilesElement;
 private:
-	int 					m_refcounter;
 							FTPProfile();
 public:
 							FTPProfile(const TCHAR * name);	//create new profile
@@ -102,7 +101,7 @@ public:
 	FTPCache*				GetCache() const;
 
 	static vProfile			LoadProfiles(const TiXmlElement * profilesElem);
-	static TiXmlElement*	SaveProfiles(const vProfile profiles);
+	static TiXmlElement*	SaveProfiles(const vProfile& profiles);
 
 	static int				SortVector(vProfile & pVect);
 private:

@@ -154,8 +154,7 @@ LRESULT Dialog::EditProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 						break; }
 				}
 			}
-			return lres;
-			break; }
+			return lres; }
 		case WM_CHAR: {
 			if (wParam == '\r' || wParam == '\n')
 				return 0;
@@ -164,8 +163,7 @@ LRESULT Dialog::EditProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 			WORD code = LOWORD(wParam);
 			switch(code) {
 				case VK_RETURN: {
-					return 0;
-					break; }
+					return 0; }
 			}
 			break; }
 		case WM_KEYDOWN: {

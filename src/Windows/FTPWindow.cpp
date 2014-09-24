@@ -523,8 +523,7 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 							FileObject * fo = (FileObject*) nmt.itemNew.lParam;
 							m_ftpSession->GetDirectory(fo->GetPath());
 						}
-						return res;
-						break; }
+						return res; }
 					case TVN_GETDISPINFO: {
 						TV_DISPINFO * ptvdi = (TV_DISPINFO*)lParam;
 						m_treeview.GetDispInfo(ptvdi);
@@ -695,20 +694,17 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 			int res = OnEvent(queueOp, code, notifyData, isStart);
 			if (res != 1)	//if res == 1, then queueop becomes invalid
 				queueOp->AckNotification();
-			return TRUE;
-			break;}
+			return TRUE; }
 		case NotifyMessageAdd: {
 			QueueOperation * queueOp = (QueueOperation*)lParam;
 			m_queueWindow.PushQueueItem(queueOp);
 			queueOp->AckNotification();
-			return TRUE;
-			break; }
+			return TRUE; }
 		case NotifyMessageRemove: {
 			QueueOperation * queueOp = (QueueOperation*)lParam;
 			m_queueWindow.RemoveQueueItem(queueOp);
 			queueOp->AckNotification();
-			return TRUE;
-			break; }
+			return TRUE; }
 		case NotifyMessageProgress: {
 			QueueOperation * queueOp = (QueueOperation*)lParam;
 			m_queueWindow.ProgressQueueItem(queueOp);

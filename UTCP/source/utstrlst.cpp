@@ -513,7 +513,7 @@ CUT_StringList::~CUT_StringList()
 /****************************************
  Assigment operator
 *****************************************/
-CUT_StringList &CUT_StringList::operator=(const CUT_StringList strlist)
+CUT_StringList &CUT_StringList::operator=(const CUT_StringList& strlist)
 {
 	if(this == &strlist)	return *this;
 
@@ -741,7 +741,7 @@ CUT_TStringList::~CUT_TStringList()
 /****************************************
  Assigment operator
 *****************************************/
-CUT_TStringList &CUT_TStringList::operator=(const CUT_TStringList strlist)
+CUT_TStringList &CUT_TStringList::operator=(const CUT_TStringList& strlist)
 {
 	if(this == &strlist)	return *this;
 
