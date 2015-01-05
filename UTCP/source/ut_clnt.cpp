@@ -639,17 +639,17 @@ int CUT_WSClient::SetSecurityMode(SSLMode mode){
 	m_sslMode = mode;
 	switch(mode) {
 		case TLS:
-			m_meth = const_cast<SSL_METHOD*>(TLSv1_client_method());
+			m_meth = TLSv1_client_method();
 			break;
 		case SSLv2:
-			m_meth = const_cast<SSL_METHOD*>(SSLv2_client_method());
+			m_meth = SSLv2_client_method();
 			break;
 		case SSLv3:
-			m_meth = const_cast<SSL_METHOD*>(SSLv3_client_method());
+			m_meth = SSLv3_client_method();
 			break;
 		case SSLv23:
 		default:
-			m_meth = const_cast<SSL_METHOD*>(SSLv23_client_method());
+			m_meth = SSLv23_client_method();
 			break;
 	}
 
