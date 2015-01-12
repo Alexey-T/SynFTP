@@ -246,7 +246,7 @@ BEGIN
             VALUE "FileDescription", "FTP Plugin for SynWrite"
             VALUE "FileVersion", IDT_VERSION_TEXT
             VALUE "InternalName", "SynFTP"
-            VALUE "LegalCopyright", "Copyright (C) 2012-2014"
+            VALUE "LegalCopyright", "Copyright (C) 2012-2015"
             VALUE "OriginalFilename", "SynFTP.dll"
             VALUE "ProductName", "SynFTP"
             VALUE "ProductVersion", IDT_VERSION_TEXT
