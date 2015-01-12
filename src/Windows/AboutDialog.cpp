@@ -65,7 +65,7 @@ INT_PTR AboutDialog::OnInitDialog() {
 	::SetDlgItemText(m_hwnd, IDC_STATIC_SYNFTPVERSION, synFTPVersion);
 
 	const TCHAR * aboutMessage = 
-		TEXT("SynFTP, Copyright 2012-2014\r\n")
+		TEXT("SynFTP, Copyright 2012-2015\r\n")
 		TEXT("Created by Harry\r\n")
 		TEXT("Modified by Ramesh, tbeu\r\n")
 		TEXT("\r\n")
