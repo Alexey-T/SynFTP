@@ -8,10 +8,8 @@ located in c:\Projects\SynFTP\. In the MinGW32 environment (MSYS) run the comman
 ```sh
 cd /c/Projects/openssl-1.0.1k
 ./Configure mingw zlib --with-zlib-include=/c/Projects/SynFTP/zlib
-```
-Manual step: In file c:\Projects\openssl-1.0.1k\Makefile replace the optimization
-flag "-O3" in CFLAGS by "-Os -O3 -flto -fuse-linker-plugin".
-```sh
+sed -i 's/ -O3 / -Os -O3 -flto -fuse-linker-plugin /' Makefile
+attrib -R Makefile
 make
 cp *.a /c/Projects/SynFTP/lib
 ```
