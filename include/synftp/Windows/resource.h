@@ -123,4 +123,5 @@
 	#define	IDC_EDIT_PROMPTMAX			197
 	#define	IDC_EDIT_ANSWERMAX			198
 	#define	IDC_STATIC_MARKER			199
-//next id:								200
+	#define IDC_CHECK_ASKPASSPHRASE		200
+//next id:								201
