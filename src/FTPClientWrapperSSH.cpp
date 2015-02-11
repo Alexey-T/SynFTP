@@ -143,7 +143,7 @@ int FTPClientWrapperSSH::GetDir(const char * path, FTPFile** files) {
 		return OnReturn(-1);
 	}
 
-	/* when file=NULL, an error has occured OR the directory listing is end of file */
+	/* when file=NULL, an error has occurred OR the directory listing is end of file */
 	if(!sftp_dir_eof(dir)){
 		OutErr("[SFTP] Unexpected end of directory list: %s\n", ssh_get_error(m_sshsession));
 		if (count == 0)
@@ -690,7 +690,7 @@ int FTPClientWrapperSSH::verify_knownhost(ssh_session session) {
 			if (ssh_write_knownhost(session) < 0) {
 				OutErr("[SFTP] Writing known hosts file failed: %s", strerror(errno));
 				OutErr("[SFTP] The session will continue but the key will not be stored");
-				result = 0;	//return 0 even if an error occured
+				result = 0;	//return 0 even if an error occurred
 			} else {
 				OutMsg("[SFTP] Host key written to file");
 				result = 0;

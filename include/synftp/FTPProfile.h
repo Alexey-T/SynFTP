@@ -94,7 +94,7 @@ public:
 	const TCHAR*			GetAsciiType(int i);
 	const TCHAR*			GetBinaryType(int i);
 
-	Transfer_Mode			GetFileTransferMode(const TCHAR* file) const;	//filename only, no paths (or path must be win32 compatiable?)
+	Transfer_Mode			GetFileTransferMode(const TCHAR* file) const;	//filename only, no paths (or path must be win32 compatible?)
 	int						GetCacheExternal(const TCHAR* localfile, char* extbuffer, int extbuffersize) const;
 	int						GetCacheLocal(const char * externalfile, TCHAR* localbuffer, int localbuffersize) const;
 
