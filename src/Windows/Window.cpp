@@ -95,7 +95,7 @@ int Window::GetWidth() {
 int Window::GetHeight() {
 	RECT rc;
 	::GetClientRect(m_hwnd, &rc);
-	//commented check: only usefull for rebars
+	//commented check: only useful for rebars
 	//if (::IsWindowVisible(m_hwnd) == TRUE)
 		return (rc.bottom - rc.top);
 	//return 0;

@@ -31,7 +31,7 @@ public:
 	static int				FreeData(char * data);
 
 	static int				SetDefaultKey(const char * defKey, int size = -1);
-	static const char*		GetDefaultKey();	//size of 8, not zero terminated neccessarily
+	static const char*		GetDefaultKey();	//size of 8, not zero terminated necessarily
 	static bool				IsDefaultKey();
 
 	static const size_t		KeySize = 8;
