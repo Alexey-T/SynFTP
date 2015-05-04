@@ -4,6 +4,6 @@
 		<Project filename="../zlib/cb/zlib.cbp" />
 		<Project filename="../tinyxml/cb/TinyXML.cbp" />
 		<Project filename="../UTCP/cb/UTCP.cbp" />
-		<Project filename="../libssh-0.6.3/cb/libssh.cbp" />
+		<Project filename="../libssh/cb/libssh.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
