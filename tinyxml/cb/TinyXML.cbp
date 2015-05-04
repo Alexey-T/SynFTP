@@ -7,9 +7,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="..\..\lib\libTinyXMLD" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/TinyXMLD" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\Debug\" />
+				<Option object_output="obj/Debug/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -18,15 +18,18 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="..\..\lib\libTinyXML" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/TinyXML" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\Release\" />
+				<Option object_output="obj/Release/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-march=i486" />
+					<Add option="-fomit-frame-pointer" />
 					<Add option="-Os" />
 					<Add option="-O3" />
+					<Add option="-flto -fuse-linker-plugin" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -35,14 +38,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="..\include" />
+			<Add directory="../include" />
 		</Compiler>
-		<Unit filename="..\include\tinystr.h" />
-		<Unit filename="..\include\tinyxml.h" />
-		<Unit filename="..\src\tinystr.cpp" />
-		<Unit filename="..\src\tinyxml.cpp" />
-		<Unit filename="..\src\tinyxmlerror.cpp" />
-		<Unit filename="..\src\tinyxmlparser.cpp" />
+		<Unit filename="../include/tinystr.h" />
+		<Unit filename="../include/tinyxml.h" />
+		<Unit filename="../src/tinystr.cpp" />
+		<Unit filename="../src/tinyxml.cpp" />
+		<Unit filename="../src/tinyxmlerror.cpp" />
+		<Unit filename="../src/tinyxmlparser.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

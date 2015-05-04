@@ -7,9 +7,9 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="..\..\lib\libzlibD" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/zlibD" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\Debug\" />
+				<Option object_output="obj/Debug/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -18,15 +18,18 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="..\..\lib\libzlib" prefix_auto="1" extension_auto="1" />
+				<Option output="../../lib/zlib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj\Release\" />
+				<Option object_output="obj/Release/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-march=i486" />
+					<Add option="-fomit-frame-pointer" />
 					<Add option="-Os" />
 					<Add option="-O3" />
+					<Add option="-flto -fuse-linker-plugin" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,68 +39,68 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="..\adler32.c">
+		<Unit filename="../adler32.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\compress.c">
+		<Unit filename="../compress.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\crc32.c">
+		<Unit filename="../crc32.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\crc32.h" />
-		<Unit filename="..\deflate.c">
+		<Unit filename="../crc32.h" />
+		<Unit filename="../deflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\deflate.h" />
-		<Unit filename="..\example.c">
+		<Unit filename="../deflate.h" />
+		<Unit filename="../example.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\gzclose.c">
+		<Unit filename="../gzclose.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\gzguts.h" />
-		<Unit filename="..\gzlib.c">
+		<Unit filename="../gzguts.h" />
+		<Unit filename="../gzlib.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\gzread.c">
+		<Unit filename="../gzread.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\gzwrite.c">
+		<Unit filename="../gzwrite.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\infback.c">
+		<Unit filename="../infback.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\inffast.c">
+		<Unit filename="../inffast.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\inffast.h" />
-		<Unit filename="..\inffixed.h" />
-		<Unit filename="..\inflate.c">
+		<Unit filename="../inffast.h" />
+		<Unit filename="../inffixed.h" />
+		<Unit filename="../inflate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\inflate.h" />
-		<Unit filename="..\inftrees.c">
+		<Unit filename="../inflate.h" />
+		<Unit filename="../inftrees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\inftrees.h" />
-		<Unit filename="..\minigzip.c">
+		<Unit filename="../inftrees.h" />
+		<Unit filename="../minigzip.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\trees.c">
+		<Unit filename="../trees.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\trees.h" />
-		<Unit filename="..\uncompr.c">
+		<Unit filename="../trees.h" />
+		<Unit filename="../uncompr.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\zconf.h" />
-		<Unit filename="..\zlib.h" />
-		<Unit filename="..\zutil.c">
+		<Unit filename="../zconf.h" />
+		<Unit filename="../zlib.h" />
+		<Unit filename="../zutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\zutil.h" />
+		<Unit filename="../zutil.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

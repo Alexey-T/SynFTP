@@ -1,0 +1,1940 @@
+# depslib dependency file v1.0
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\agent.c
+	<stdlib.h>
+	<errno.h>
+	<string.h>
+	<stdio.h>
+	<poll.h>
+	<unistd.h>
+	<arpa/inet.h>
+	"libssh/agent.h"
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/keys.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\agent.h
+	"libssh/libssh.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\libssh.h
+	<unistd.h>
+	<inttypes.h>
+	<winsock2.h>
+	<sys/select.h>
+	<netdb.h>
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\priv.h
+	"config.h"
+	<unistd.h>
+	"libssh/libssh.h"
+	"libssh/callbacks.h"
+	"libssh/crypto.h"
+	<sys/time.h>
+	"libssh/wrapper.h"
+
+1292232798 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\config.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\callbacks.h
+	<libssh/libssh.h>
+	<string.h>
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\crypto.h
+	"config.h"
+	<gcrypt.h>
+	"libssh/wrapper.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\wrapper.h
+	"config.h"
+	<gcrypt.h>
+	<openssl/dsa.h>
+	<openssl/rsa.h>
+	<openssl/sha.h>
+	<openssl/md5.h>
+	<openssl/hmac.h>
+	<openssl/bn.h>
+	<openssl/opensslv.h>
+
+1221573324 d:\programming\projects\npp\plugin\nppftp\include\openssl\dsa.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+	<openssl/dh.h>
+
+1134932228 d:\programming\projects\npp\plugin\nppftp\include\openssl\e_os2.h
+	<openssl/opensslconf.h>
+
+1269436830 d:\programming\projects\npp\plugin\nppftp\include\openssl\opensslconf.h
+
+1252083210 d:\programming\projects\npp\plugin\nppftp\include\openssl\bio.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdarg.h>
+	<openssl/crypto.h>
+
+1225046520 d:\programming\projects\npp\plugin\nppftp\include\openssl\crypto.h
+	<stdlib.h>
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/opensslv.h>
+	<openssl/ossl_typ.h>
+	<openssl/ebcdic.h>
+	<openssl/symhacks.h>
+
+1096903810 d:\programming\projects\npp\plugin\nppftp\include\openssl\stack.h
+
+1252250060 d:\programming\projects\npp\plugin\nppftp\include\openssl\safestack.h
+	<openssl/stack.h>
+
+1269436616 d:\programming\projects\npp\plugin\nppftp\include\openssl\opensslv.h
+
+1226406138 d:\programming\projects\npp\plugin\nppftp\include\openssl\ossl_typ.h
+	<openssl/e_os2.h>
+
+949371674 d:\programming\projects\npp\plugin\nppftp\include\openssl\ebcdic.h
+	<sys/types.h>
+
+1266822324 d:\programming\projects\npp\plugin\nppftp\include\openssl\symhacks.h
+	<openssl/e_os2.h>
+
+1224336456 d:\programming\projects\npp\plugin\nppftp\include\openssl\bn.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/ossl_typ.h>
+	<assert.h>
+
+1221573322 d:\programming\projects\npp\plugin\nppftp\include\openssl\dh.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1221573326 d:\programming\projects\npp\plugin\nppftp\include\openssl\rsa.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1252248406 d:\programming\projects\npp\plugin\nppftp\include\openssl\asn1.h
+	<time.h>
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1221558448 d:\programming\projects\npp\plugin\nppftp\include\openssl\sha.h
+	<openssl/e_os2.h>
+	<stddef.h>
+
+1221558446 d:\programming\projects\npp\plugin\nppftp\include\openssl\md5.h
+	<openssl/e_os2.h>
+	<stddef.h>
+
+1213631800 d:\programming\projects\npp\plugin\nppftp\include\openssl\hmac.h
+	<openssl/opensslconf.h>
+	<openssl/evp.h>
+
+1221667860 d:\programming\projects\npp\plugin\nppftp\include\openssl\evp.h
+	<openssl/opensslconf.h>
+	<openssl/opensslconf.h>
+	<openssl/ossl_typ.h>
+	<openssl/symhacks.h>
+	<openssl/bio.h>
+	<openssl/fips.h>
+	<openssl/objects.h>
+
+1221556330 d:\programming\projects\npp\plugin\nppftp\include\openssl\fips.h
+	<openssl/opensslconf.h>
+
+1102208590 d:\programming\projects\npp\plugin\nppftp\include\openssl\objects.h
+	<openssl/obj_mac.h>
+	<openssl/bio.h>
+	<openssl/asn1.h>
+
+1264435732 d:\programming\projects\npp\plugin\nppftp\include\openssl\obj_mac.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\socket.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\buffer.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\session.h
+	"libssh/priv.h"
+	"libssh/packet.h"
+	"libssh/pcap.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\packet.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\pcap.h
+	"config.h"
+	"libssh/libssh.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\keys.h
+	"config.h"
+	"libssh/libssh.h"
+	"libssh/wrapper.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\auth.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/agent.h"
+	"libssh/keyfiles.h"
+	"libssh/misc.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/keys.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\ssh2.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\keyfiles.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\misc.h
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\auth1.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/ssh1.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/string.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\ssh1.h
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\string.h
+	"libssh/priv.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\base64.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\buffer.c
+	<stdlib.h>
+	<string.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\callbacks.c
+	"config.h"
+	"libssh/callbacks.h"
+	"libssh/session.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\channels.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<errno.h>
+	<time.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/messages.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\channels.h
+	"libssh/priv.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\messages.h
+	"config.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\client.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/session.h"
+	"libssh/dh.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\dh.h
+	"config.h"
+	"libssh/keys.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\config.c
+	<ctype.h>
+	<stdio.h>
+	<string.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+
+1292234505 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\connect.c
+	<errno.h>
+	<fcntl.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"config.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<netdb.h>
+	<sys/socket.h>
+	<sys/select.h>
+	<netinet/in.h>
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	<regex.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\crc32.c
+	"libssh/priv.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\crypt.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<arpa/inet.h>
+	<openssl/blowfish.h>
+	<openssl/evp.h>
+	<openssl/hmac.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/wrapper.h"
+	"libssh/crypto.h"
+
+1221558444 d:\programming\projects\npp\plugin\nppftp\include\openssl\blowfish.h
+	<openssl/e_os2.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\dh.c
+	"config.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/crypto.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/keys.h"
+	"libssh/dh.h"
+	"libssh/string.h"
+	<openssl/rand.h>
+	<openssl/evp.h>
+	<openssl/err.h>
+
+1221562206 d:\programming\projects\npp\plugin\nppftp\include\openssl\rand.h
+	<stdlib.h>
+	<openssl/ossl_typ.h>
+	<openssl/e_os2.h>
+	<windows.h>
+
+1225046522 d:\programming\projects\npp\plugin\nppftp\include\openssl\err.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdlib.h>
+	<openssl/ossl_typ.h>
+	<openssl/bio.h>
+	<openssl/lhash.h>
+	<errno.h>
+
+1067403426 d:\programming\projects\npp\plugin\nppftp\include\openssl\lhash.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/bio.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\error.c
+	<stdio.h>
+	<stdarg.h>
+	"libssh/priv.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\gcrypt_missing.c
+	<stdlib.h>
+	"libssh/priv.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\gzip.c
+	"config.h"
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	<zlib.h>
+	<string.h>
+	<stdlib.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\init.c
+	"config.h"
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/dh.h"
+	<winsock2.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\kex.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/ssh1.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/wrapper.h"
+	"libssh/keys.h"
+	"libssh/dh.h"
+	"libssh/string.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\keyfiles.c
+	"config.h"
+	<ctype.h>
+	<errno.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/keyfiles.h"
+	"libssh/session.h"
+	"libssh/wrapper.h"
+	"libssh/misc.h"
+	"libssh/keys.h"
+	"libssh/string.h"
+	<gcrypt.h>
+	<openssl/pem.h>
+	<openssl/dsa.h>
+	<openssl/err.h>
+	<openssl/rsa.h>
+
+1236600384 d:\programming\projects\npp\plugin\nppftp\include\openssl\pem.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/evp.h>
+	<openssl/x509.h>
+	<openssl/pem2.h>
+	<openssl/symhacks.h>
+
+1238774044 d:\programming\projects\npp\plugin\nppftp\include\openssl\x509.h
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/buffer.h>
+	<openssl/evp.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/asn1.h>
+	<openssl/safestack.h>
+	<openssl/ec.h>
+	<openssl/ecdsa.h>
+	<openssl/ecdh.h>
+	<openssl/rsa.h>
+	<openssl/dsa.h>
+	<openssl/dh.h>
+	<openssl/sha.h>
+	<openssl/ossl_typ.h>
+	<openssl/x509_vfy.h>
+	<openssl/pkcs7.h>
+
+1114537994 d:\programming\projects\npp\plugin\nppftp\include\openssl\buffer.h
+	<openssl/ossl_typ.h>
+	<stddef.h>
+	<sys/types.h>
+
+1179823686 d:\programming\projects\npp\plugin\nppftp\include\openssl\ec.h
+	<openssl/opensslconf.h>
+	<openssl/asn1.h>
+	<openssl/symhacks.h>
+	<openssl/bn.h>
+
+1159988104 d:\programming\projects\npp\plugin\nppftp\include\openssl\ecdsa.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1116234660 d:\programming\projects\npp\plugin\nppftp\include\openssl\ecdh.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1246012462 d:\programming\projects\npp\plugin\nppftp\include\openssl\x509_vfy.h
+	<openssl/x509.h>
+	<openssl/opensslconf.h>
+	<openssl/lhash.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/symhacks.h>
+
+1123189806 d:\programming\projects\npp\plugin\nppftp\include\openssl\pkcs7.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+
+1025193988 d:\programming\projects\npp\plugin\nppftp\include\openssl\pem2.h
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\keys.c
+	<stdlib.h>
+	<string.h>
+	<openssl/dsa.h>
+	<openssl/rsa.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/server.h"
+	"libssh/buffer.h"
+	"libssh/agent.h"
+	"libssh/session.h"
+	"libssh/keys.h"
+	"libssh/dh.h"
+	"libssh/messages.h"
+	"libssh/string.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\server.h
+	"libssh/libssh.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\log.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\match.c
+	<ctype.h>
+	<string.h>
+	<sys/types.h>
+	"libssh/priv.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\messages.c
+	<string.h>
+	<stdlib.h>
+	<arpa/inet.h>
+	"libssh/libssh.h"
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/keys.h"
+	"libssh/dh.h"
+	"libssh/messages.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\misc.c
+	"config.h"
+	<limits.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<shlobj.h>
+	<direct.h>
+	<pwd.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/misc.h"
+	"libssh/session.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\options.c
+	"config.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<pwd.h>
+	<winsock2.h>
+	<sys/types.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/server.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\packet.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<errno.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/ssh1.h"
+	"libssh/crypto.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/messages.h"
+	"libssh/pcap.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\pcap.c
+	"config.h"
+	<stdio.h>
+	<ws2tcpip.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<errno.h>
+	"libssh/libssh.h"
+	"libssh/pcap.h"
+	"libssh/session.h"
+	"libssh/buffer.h"
+	"libssh/socket.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\poll.c
+	"config.h"
+	<errno.h>
+	"libssh/priv.h"
+	"libssh/libssh.h"
+	"libssh/poll.h"
+	<poll.h>
+	<sys/types.h>
+	<time.h>
+	<windows.h>
+	<winsock2.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<unistd.h>
+	<sys/time.h>
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\poll.h
+	"config.h"
+	<poll.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\scp.c
+	<stdio.h>
+	<string.h>
+	"libssh/priv.h"
+	"libssh/scp.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\scp.h
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\server.c
+	"config.h"
+	<errno.h>
+	<fcntl.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/libssh.h"
+	"libssh/server.h"
+	"libssh/ssh2.h"
+	"libssh/keyfiles.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/keys.h"
+	"libssh/dh.h"
+	"libssh/messages.h"
+	<winsock2.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<netdb.h>
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\session.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	"libssh/libssh.h"
+	"libssh/priv.h"
+	"libssh/server.h"
+	"libssh/socket.h"
+	"libssh/agent.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\sftp.c
+	<errno.h>
+	<ctype.h>
+	<fcntl.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/sftp.h"
+	"libssh/buffer.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+
+1275303532 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\libssh\sftp.h
+	<sys/types.h>
+	"libssh.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\sftpserver.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<arpa/inet.h>
+	"libssh/libssh.h"
+	"libssh/sftp.h"
+	"libssh/ssh2.h"
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/misc.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\socket.c
+	<errno.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<fcntl.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/un.h>
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/buffer.h"
+	"libssh/poll.h"
+	"libssh/session.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\string.c
+	<stdlib.h>
+	<string.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/string.h"
+
+1275303532 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\wrapper.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/crypto.h"
+	"libssh/wrapper.h"
+	<gcrypt.h>
+	<openssl/sha.h>
+	<openssl/md5.h>
+	<openssl/dsa.h>
+	<openssl/rsa.h>
+	<openssl/hmac.h>
+	<openssl/opensslv.h>
+	<openssl/aes.h>
+	<openssl/blowfish.h>
+	<openssl/des.h>
+	"libssh/crypto.h"
+
+1221558444 d:\programming\projects\npp\plugin\nppftp\include\openssl\aes.h
+	<openssl/opensslconf.h>
+
+1211280612 d:\programming\projects\npp\plugin\nppftp\include\openssl\des.h
+	<openssl/e_os2.h>
+	<openssl/des_old.h>
+
+1211280612 d:\programming\projects\npp\plugin\nppftp\include\openssl\des_old.h
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/ui_compat.h>
+
+1017150856 d:\programming\projects\npp\plugin\nppftp\include\openssl\ui_compat.h
+	<openssl/opensslconf.h>
+	<openssl/ui.h>
+
+1112257596 d:\programming\projects\npp\plugin\nppftp\include\openssl\ui.h
+	<openssl/crypto.h>
+	<openssl/safestack.h>
+	<openssl/ossl_typ.h>
+
+1275390058 source:d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\libssh\channels1.c
+	<string.h>
+	<stdlib.h>
+	<unistd.h>
+	<stdio.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh1.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+
+1268583812 d:\programming\projects\npp\plugin\nppftp\zlib\zlib.h
+	"zconf.h"
+
+1266791904 d:\programming\projects\npp\plugin\nppftp\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+	<sys/types.h>
+
+1291487078 d:\programming\projects\npp\plugin\nppftp\libssh-0.4.4\include\wspiapi.h
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+
+1420449562 source:d:\iti-projekte-nobak\synftp\libssh\libssh\agent.c
+	"config.h"
+	<stdlib.h>
+	<errno.h>
+	<string.h>
+	<stdio.h>
+	<unistd.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/agent.h"
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/poll.h"
+	"libssh/pki.h"
+
+1430741790 d:\iti-projekte-nobak\synftp\libssh\include\config.h
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\agent.h
+	"libssh/libssh.h"
+
+1430396854 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libssh.h
+	<unistd.h>
+	<inttypes.h>
+	<winsock2.h>
+	<sys/select.h>
+	<netdb.h>
+	"libssh/legacy.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\legacy.h
+
+1430306159 d:\iti-projekte-nobak\synftp\libssh\include\libssh\priv.h
+	"config.h"
+	<stdio.h>
+	<unistd.h>
+	"libssh/libssh.h"
+	"libssh/callbacks.h"
+	<sys/time.h>
+
+1429783956 d:\iti-projekte-nobak\synftp\libssh\include\libssh\callbacks.h
+	<libssh/libssh.h>
+	<string.h>
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\socket.h
+	"libssh/callbacks.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\buffer.h
+	"libssh/libssh.h"
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\session.h
+	"libssh/priv.h"
+	"libssh/kex.h"
+	"libssh/packet.h"
+	"libssh/pcap.h"
+	"libssh/auth.h"
+	"libssh/channels.h"
+	"libssh/poll.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\kex.h
+	"libssh/priv.h"
+	"libssh/callbacks.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\packet.h
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\pcap.h
+	"config.h"
+	"libssh/libssh.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\auth.h
+	"config.h"
+	"libssh/callbacks.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\channels.h
+	"libssh/priv.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\poll.h
+	"config.h"
+	<poll.h>
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\pki.h
+	<openssl/ec.h>
+	<openssl/ecdsa.h>
+	"libssh/crypto.h"
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ec.h
+	<openssl/opensslconf.h>
+	<openssl/asn1.h>
+	<openssl/symhacks.h>
+	<openssl/bn.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\opensslconf.h
+
+1427274103 d:\iti-projekte-nobak\synftp\include\openssl\asn1.h
+	<time.h>
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\e_os2.h
+	<openssl/opensslconf.h>
+	<sys/socket.h>
+
+1427274103 d:\iti-projekte-nobak\synftp\include\openssl\bio.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdarg.h>
+	<openssl/crypto.h>
+	<stdint.h>
+	<inttypes.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\crypto.h
+	<stdlib.h>
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/opensslv.h>
+	<openssl/ossl_typ.h>
+	<openssl/ebcdic.h>
+	<openssl/symhacks.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\stack.h
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\safestack.h
+	<openssl/stack.h>
+
+1427274103 d:\iti-projekte-nobak\synftp\include\openssl\opensslv.h
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ossl_typ.h
+	<openssl/e_os2.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ebcdic.h
+	<sys/types.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\symhacks.h
+	<openssl/e_os2.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\bn.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/ossl_typ.h>
+	<openssl/crypto.h>
+	<assert.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ecdsa.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\crypto.h
+	"config.h"
+	<gcrypt.h>
+	"libssh/wrapper.h"
+	<openssl/ecdh.h>
+	"libssh/ecdh.h"
+	"libssh/kex.h"
+	"libssh/curve25519.h"
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\wrapper.h
+	"config.h"
+	"libssh/libcrypto.h"
+	"libssh/libgcrypt.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libcrypto.h
+	"config.h"
+	<openssl/dsa.h>
+	<openssl/rsa.h>
+	<openssl/sha.h>
+	<openssl/md5.h>
+	<openssl/hmac.h>
+	<openssl/evp.h>
+	<openssl/bn.h>
+	<openssl/opensslv.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\dsa.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+	<openssl/dh.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\dh.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\rsa.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\sha.h
+	<openssl/e_os2.h>
+	<stddef.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\md5.h
+	<openssl/e_os2.h>
+	<stddef.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\hmac.h
+	<openssl/opensslconf.h>
+	<openssl/evp.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\evp.h
+	<openssl/opensslconf.h>
+	<openssl/opensslconf.h>
+	<openssl/ossl_typ.h>
+	<openssl/symhacks.h>
+	<openssl/bio.h>
+	<openssl/objects.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\objects.h
+	<openssl/obj_mac.h>
+	<openssl/bio.h>
+	<openssl/asn1.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\obj_mac.h
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libgcrypt.h
+	"config.h"
+	<gcrypt.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ecdh.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\ecdh.h
+	"config.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\curve25519.h
+	"config.h"
+	"libssh.h"
+	<nacl/crypto_scalarmult_curve25519.h>
+
+1420449562 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth1.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/ssh1.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/string.h"
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\ssh1.h
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\string.h
+	"libssh/priv.h"
+
+1420449562 source:d:\iti-projekte-nobak\synftp\libssh\libssh\base64.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+
+1420449562 source:d:\iti-projekte-nobak\synftp\libssh\libssh\callbacks.c
+	"config.h"
+	"libssh/callbacks.h"
+	"libssh/session.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\crc32.c
+	"config.h"
+	"libssh/priv.h"
+	"libssh/crc32.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\crc32.h
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\curve25519.c
+	"config.h"
+	"libssh/curve25519.h"
+	"nacl/crypto_scalarmult_curve25519.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/crypto.h"
+	"libssh/dh.h"
+	"libssh/pki.h"
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\ssh2.h
+
+1430306159 d:\iti-projekte-nobak\synftp\libssh\include\libssh\dh.h
+	"config.h"
+	"libssh/crypto.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\curve25519_ref.c
+	"libssh/curve25519.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\ecdh.c
+	"config.h"
+	"libssh/session.h"
+	"libssh/ecdh.h"
+	"libssh/dh.h"
+	"libssh/buffer.h"
+	"libssh/ssh2.h"
+	"libssh/pki.h"
+	<openssl/ecdh.h>
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\error.c
+	<stdio.h>
+	<stdarg.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\gcrypt_missing.c
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/libgcrypt.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\getpass.c
+	"config.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<libssh/priv.h>
+	<windows.h>
+	<fcntl.h>
+	<termios.h>
+	<unistd.h>
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\gzip.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	<zlib.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/crypto.h"
+	"libssh/session.h"
+
+1410359753 d:\iti-projekte-nobak\synftp\zlib\zlib.h
+	"zconf.h"
+
+1410359753 d:\iti-projekte-nobak\synftp\zlib\zconf.h
+	<windows.h>
+	<limits.h>
+	<sys/types.h>
+	<stdarg.h>
+	<stddef.h>
+	<unistd.h>
+	<unixio.h>
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\init.c
+	"config.h"
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/dh.h"
+	"libssh/poll.h"
+	"libssh/threads.h"
+	<winsock2.h>
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\threads.h
+	<libssh/libssh.h>
+	<libssh/callbacks.h>
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex1.c
+	"config.h"
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/crypto.h"
+	"libssh/kex.h"
+	"libssh/keys.h"
+	"libssh/session.h"
+	"libssh/ssh1.h"
+	"libssh/wrapper.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\keys.h
+	"config.h"
+	"libssh/libssh.h"
+	"libssh/wrapper.h"
+
+1420449563 source:d:\iti-projekte-nobak\synftp\libssh\libssh\legacy.c
+	"config.h"
+	<errno.h>
+	<stdio.h>
+	<libssh/priv.h>
+	<libssh/session.h>
+	<libssh/server.h>
+	<libssh/buffer.h>
+	<libssh/pki.h>
+	"libssh/pki_priv.h"
+	<libssh/misc.h>
+	<libssh/keys.h>
+	"libssh/options.h"
+
+1429783956 d:\iti-projekte-nobak\synftp\libssh\include\libssh\server.h
+	"libssh/libssh.h"
+
+1430306159 d:\iti-projekte-nobak\synftp\libssh\include\libssh\pki_priv.h
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\misc.h
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\options.h
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\log.c
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<sys/time.h>
+	<sys/utime.h>
+	<time.h>
+	"libssh/priv.h"
+	"libssh/misc.h"
+	"libssh/session.h"
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\match.c
+	<ctype.h>
+	<string.h>
+	<sys/types.h>
+	"libssh/priv.h"
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\misc.c
+	"config.h"
+	<pwd.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<sys/time.h>
+	<limits.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<ctype.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<shlobj.h>
+	<direct.h>
+	<io.h>
+	"libssh/priv.h"
+	"libssh/misc.h"
+	"libssh/session.h"
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet1.c
+	"config.h"
+	<stdlib.h>
+	<netinet/in.h>
+	"libssh/priv.h"
+	"libssh/ssh1.h"
+	"libssh/crc32.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/buffer.h"
+	"libssh/socket.h"
+	"libssh/kex.h"
+	"libssh/crypto.h"
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet_crypt.c
+	"config.h"
+	<assert.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<openssl/blowfish.h>
+	<openssl/evp.h>
+	<openssl/hmac.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/wrapper.h"
+	"libssh/crypto.h"
+	"libssh/buffer.h"
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\blowfish.h
+	<openssl/e_os2.h>
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pcap.c
+	"config.h"
+	<stdio.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<netinet/in.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<errno.h>
+	<stdlib.h>
+	"libssh/libssh.h"
+	"libssh/pcap.h"
+	"libssh/session.h"
+	"libssh/buffer.h"
+	"libssh/socket.h"
+	"libssh/libssh.h"
+	"libssh/priv.h"
+
+1420449564 source:d:\iti-projekte-nobak\synftp\libssh\libssh\scp.c
+	"config.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/scp.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\scp.h
+
+1420449565 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftpserver.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/libssh.h"
+	"libssh/sftp.h"
+	"libssh/ssh2.h"
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/misc.h"
+
+1420449562 d:\iti-projekte-nobak\synftp\libssh\include\libssh\sftp.h
+	<sys/types.h>
+	"libssh.h"
+
+1420449565 source:d:\iti-projekte-nobak\synftp\libssh\libssh\threads.c
+	"config.h"
+	"libssh/priv.h"
+	"libssh/crypto.h"
+	"libssh/threads.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/crypto.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/agent.h"
+	"libssh/misc.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/keys.h"
+	"libssh/auth.h"
+	"libssh/pki.h"
+	"libssh/gssapi.h"
+	"libssh/legacy.h"
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\gssapi.h
+	"config.h"
+	"session.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\bind.c
+	"config.h"
+	<errno.h>
+	<fcntl.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/bind.h"
+	"libssh/libssh.h"
+	"libssh/server.h"
+	"libssh/pki.h"
+	"libssh/buffer.h"
+	"libssh/socket.h"
+	"libssh/session.h"
+	<io.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<netdb.h>
+
+1420449560 d:\iti-projekte-nobak\synftp\libssh\include\libssh\bind.h
+	"libssh/priv.h"
+	"libssh/session.h"
+
+1410359753 d:\iti-projekte-nobak\synftp\libssh\include\wspiapi.h
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+
+1430396854 source:d:\iti-projekte-nobak\synftp\libssh\libssh\buffer.c
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\channels.c
+	<limits.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<errno.h>
+	<time.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/messages.h"
+	"libssh/server.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\messages.h
+	"config.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\channels1.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<arpa/inet.h>
+	<unistd.h>
+	"libssh/priv.h"
+	"libssh/ssh1.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\client.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/options.h"
+	"libssh/socket.h"
+	"libssh/session.h"
+	"libssh/dh.h"
+	"libssh/ecdh.h"
+	"libssh/threads.h"
+	"libssh/misc.h"
+	"libssh/pki.h"
+	"libssh/kex.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\config.c
+	"config.h"
+	<ctype.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/options.h"
+
+1429783956 source:d:\iti-projekte-nobak\synftp\libssh\libssh\connect.c
+	"config.h"
+	<errno.h>
+	<fcntl.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"libssh/libssh.h"
+	"libssh/misc.h"
+	<io.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<netdb.h>
+	<sys/socket.h>
+	<sys/select.h>
+	<netinet/in.h>
+	"libssh/priv.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/poll.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\dh.c
+	"config.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/crypto.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/dh.h"
+	"libssh/ssh2.h"
+	"libssh/pki.h"
+	"libssh/string.h"
+	<openssl/rand.h>
+	<openssl/evp.h>
+	<openssl/err.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\rand.h
+	<stdlib.h>
+	<openssl/ossl_typ.h>
+	<openssl/e_os2.h>
+	<windows.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\err.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdlib.h>
+	<openssl/ossl_typ.h>
+	<openssl/bio.h>
+	<openssl/lhash.h>
+	<errno.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\lhash.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/bio.h>
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/dh.h"
+	"libssh/kex.h"
+	"libssh/session.h"
+	"libssh/ssh2.h"
+	"libssh/string.h"
+	"libssh/curve25519.h"
+	"libssh/knownhosts.h"
+
+1420449561 d:\iti-projekte-nobak\synftp\libssh\include\libssh\knownhosts.h
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\known_hosts.c
+	"config.h"
+	<ctype.h>
+	<errno.h>
+	<stdio.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/buffer.h"
+	"libssh/misc.h"
+	"libssh/pki.h"
+	"libssh/options.h"
+	"libssh/knownhosts.h"
+	"libssh/string.h"
+	<gcrypt.h>
+	<openssl/pem.h>
+	<openssl/dsa.h>
+	<openssl/err.h>
+	<openssl/rsa.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pem.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/evp.h>
+	<openssl/x509.h>
+	<openssl/pem2.h>
+	<openssl/symhacks.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\x509.h
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/buffer.h>
+	<openssl/evp.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/asn1.h>
+	<openssl/safestack.h>
+	<openssl/ec.h>
+	<openssl/ecdsa.h>
+	<openssl/ecdh.h>
+	<openssl/rsa.h>
+	<openssl/dsa.h>
+	<openssl/dh.h>
+	<openssl/sha.h>
+	<openssl/ossl_typ.h>
+	<openssl/x509_vfy.h>
+	<openssl/pkcs7.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\buffer.h
+	<openssl/ossl_typ.h>
+	<stddef.h>
+	<sys/types.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\x509_vfy.h
+	<openssl/x509.h>
+	<openssl/opensslconf.h>
+	<openssl/lhash.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/symhacks.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pkcs7.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pem2.h
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libcrypto.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<sys/time.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/crypto.h"
+	"libssh/wrapper.h"
+	"libssh/libcrypto.h"
+	<openssl/sha.h>
+	<openssl/md5.h>
+	<openssl/dsa.h>
+	<openssl/rsa.h>
+	<openssl/hmac.h>
+	<openssl/opensslv.h>
+	<openssl/rand.h>
+	<openssl/aes.h>
+	<openssl/blowfish.h>
+	<openssl/des.h>
+	"libssh/crypto.h"
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\aes.h
+	<openssl/opensslconf.h>
+	<stddef.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\des.h
+	<openssl/e_os2.h>
+	<openssl/des_old.h>
+
+1422020233 d:\iti-projekte-nobak\synftp\include\openssl\des_old.h
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/ui_compat.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ui_compat.h
+	<openssl/opensslconf.h>
+	<openssl/ui.h>
+
+1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ui.h
+	<openssl/crypto.h>
+	<openssl/safestack.h>
+	<openssl/ossl_typ.h>
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libgcrypt.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/crypto.h"
+	"libssh/wrapper.h"
+	<gcrypt.h>
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\messages.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/libssh.h"
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/pki.h"
+	"libssh/dh.h"
+	"libssh/messages.h"
+	"libssh/server.h"
+	"libssh/gssapi.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\options.c
+	"config.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<pwd.h>
+	<winsock2.h>
+	<sys/types.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/options.h"
+	"libssh/server.h"
+	"libssh/bind.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<errno.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/crypto.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/channels.h"
+	"libssh/misc.h"
+	"libssh/session.h"
+	"libssh/messages.h"
+	"libssh/pcap.h"
+	"libssh/kex.h"
+	"libssh/auth.h"
+	"libssh/gssapi.h"
+
+1430396854 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet_cb.c
+	"config.h"
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/crypto.h"
+	"libssh/dh.h"
+	"libssh/misc.h"
+	"libssh/packet.h"
+	"libssh/pki.h"
+	"libssh/session.h"
+	"libssh/socket.h"
+	"libssh/ssh2.h"
+	"libssh/curve25519.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki.c
+	"config.h"
+	<errno.h>
+	<ctype.h>
+	<stdio.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<io.h>
+	"libssh/libssh.h"
+	"libssh/session.h"
+	"libssh/priv.h"
+	"libssh/pki.h"
+	"libssh/pki_priv.h"
+	"libssh/keys.h"
+	"libssh/buffer.h"
+	"libssh/misc.h"
+	"libssh/agent.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_crypto.c
+	"libssh/priv.h"
+	<openssl/pem.h>
+	<openssl/dsa.h>
+	<openssl/err.h>
+	<openssl/rsa.h>
+	<openssl/ec.h>
+	<openssl/ecdsa.h>
+	"libssh/libssh.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/pki.h"
+	"libssh/pki_priv.h"
+	"libssh/dh.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_gcrypt.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	<gcrypt.h>
+	<stdio.h>
+	"libssh/priv.h"
+	"libssh/buffer.h"
+	"libssh/session.h"
+	"libssh/wrapper.h"
+	"libssh/misc.h"
+	"libssh/pki.h"
+	"libssh/pki_priv.h"
+
+1430396854 source:d:\iti-projekte-nobak\synftp\libssh\libssh\server.c
+	"config.h"
+	<errno.h>
+	<fcntl.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<netinet/in.h>
+	"libssh/priv.h"
+	"libssh/libssh.h"
+	"libssh/server.h"
+	"libssh/ssh2.h"
+	"libssh/buffer.h"
+	"libssh/packet.h"
+	"libssh/socket.h"
+	"libssh/session.h"
+	"libssh/kex.h"
+	"libssh/misc.h"
+	"libssh/pki.h"
+	"libssh/dh.h"
+	"libssh/messages.h"
+	"libssh/options.h"
+	"libssh/curve25519.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\session.c
+	"config.h"
+	<string.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/libssh.h"
+	"libssh/crypto.h"
+	"libssh/server.h"
+	"libssh/socket.h"
+	"libssh/ssh2.h"
+	"libssh/agent.h"
+	"libssh/packet.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/buffer.h"
+	"libssh/poll.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftp.c
+	<errno.h>
+	<ctype.h>
+	<fcntl.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/ssh2.h"
+	"libssh/sftp.h"
+	"libssh/buffer.h"
+	"libssh/channels.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\socket.c
+	<errno.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<io.h>
+	<fcntl.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/un.h>
+	"libssh/priv.h"
+	"libssh/callbacks.h"
+	"libssh/socket.h"
+	"libssh/buffer.h"
+	"libssh/poll.h"
+	"libssh/session.h"
+
+1429783956 source:d:\iti-projekte-nobak\synftp\libssh\libssh\string.c
+	<errno.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	"libssh/priv.h"
+	"libssh/string.h"
+
+1429783956 source:d:\iti-projekte-nobak\synftp\libssh\libssh\threads\pthread.c
+	"config.h"
+	<libssh/callbacks.h>
+	<errno.h>
+	<stdlib.h>
+	<pthread.h>
+
+1430306159 source:d:\iti-projekte-nobak\synftp\libssh\libssh\wrapper.c
+	"config.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<zlib.h>
+	"libssh/priv.h"
+	"libssh/session.h"
+	"libssh/crypto.h"
+	"libssh/wrapper.h"
+	"libssh/pki.h"
+
+1430743325 source:d:\iti-projekte-nobak\synftp\libssh\libssh\poll.c
+	"config.h"
+	<errno.h>
+	<stdlib.h>
+	"libssh/priv.h"
+	"libssh/libssh.h"
+	"libssh/poll.h"
+	"libssh/socket.h"
+	"libssh/session.h"
+	"libssh/misc.h"
+	"libssh/server.h"
+	<poll.h>
+	<sys/types.h>
+	<time.h>
+	<windows.h>
+	<winsock2.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<unistd.h>
+
