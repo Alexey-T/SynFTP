@@ -93,6 +93,9 @@
 		<Unit filename="../libssh/base64.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../libssh/bignum.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../libssh/bind.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -133,6 +136,27 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../libssh/error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/bcrypt_pbkdf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/blowfish.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/curve25519_ref.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/ed25519.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/fe25519.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/ge25519.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/external/sc25519.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../libssh/gcrypt_missing.c">
@@ -198,7 +222,13 @@
 		<Unit filename="../libssh/pki.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../libssh/pki_container_openssh.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../libssh/pki_crypto.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libssh/pki_ed25519.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../libssh/pki_gcrypt.c">
