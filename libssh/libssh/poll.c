@@ -680,7 +680,7 @@ struct ssh_event_struct {
  *         ssh_session objects and socket fd which are going to be polled at the
  *         same time as the event context. You would need a single event context
  *         per thread.
- *
+ * 
  * @return  The ssh_event object on success, NULL on failure.
  */
 ssh_event ssh_event_new(void) {
@@ -742,7 +742,7 @@ int ssh_event_add_fd(ssh_event event, socket_t fd, short events,
                                     ssh_event_callback cb, void *userdata) {
     ssh_poll_handle p;
     struct ssh_event_fd_wrapper *pw;
-
+    
     if(event == NULL || event->ctx == NULL || cb == NULL
                                            || fd == SSH_INVALID_SOCKET) {
         return SSH_ERROR;
@@ -786,7 +786,7 @@ int ssh_event_add_session(ssh_event event, ssh_session session) {
 #ifdef WITH_SERVER
     struct ssh_iterator *iterator;
 #endif
-
+    
     if(event == NULL || event->ctx == NULL || session == NULL) {
         return SSH_ERROR;
     }
