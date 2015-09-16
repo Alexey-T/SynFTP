@@ -110,7 +110,7 @@ static ssh_packet_callback default_packet_handlers[]= {
   ssh_packet_global_request,               // SSH2_MSG_GLOBAL_REQUEST             80
 #else /* WITH_SERVER */
   NULL,
-#endif /* WITH_SERVER */
+#endif /* WITH_SERVER */ 
   ssh_request_success,                     // SSH2_MSG_REQUEST_SUCCESS            81
   ssh_request_denied,                      // SSH2_MSG_REQUEST_FAILURE            82
   NULL, NULL, NULL, NULL, NULL, NULL, NULL,//                                     83-89
