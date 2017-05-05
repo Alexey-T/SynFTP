@@ -33,6 +33,7 @@ FTPProfile::FTPProfile() :
 	m_username(NULL),
 	m_password(NULL),
 	m_askPassword(false),
+	m_askPassphrase(false),
 	m_timeout(30),
 	m_securityMode(Mode_FTP),
 	m_transferMode(Mode_Binary),
@@ -51,6 +52,7 @@ FTPProfile::FTPProfile() :
 FTPProfile::FTPProfile(const TCHAR * name) :
 	m_port(21),
 	m_askPassword(false),
+	m_askPassphrase(false),
 	m_timeout(30),
 	m_securityMode(Mode_FTP),
 	m_transferMode(Mode_Binary),
@@ -78,6 +80,8 @@ FTPProfile::FTPProfile(const TCHAR * name) :
 
 FTPProfile::FTPProfile(const TCHAR * name, const FTPProfile* other) :
 	m_port(other->m_port),
+	m_askPassword(other->m_askPassword),
+	m_askPassphrase(other->m_askPassphrase),
 	m_timeout(other->m_timeout),
 	m_securityMode(other->m_securityMode),
 	m_transferMode(other->m_transferMode),
@@ -158,7 +162,7 @@ FTPProfile::~FTPProfile() {
 FTPClientWrapper* FTPProfile::CreateWrapper() {
 	FTPClientWrapper * wrapper = NULL;
 
-	char * password = NULL;
+	char * password = NULL, * passphrase = NULL;
 	if (m_askPassword) {
 		InputDialog passDialog;
 		int ret = passDialog.Create(_MainOutputWindow, TEXT("Enter password"), TEXT("Please enter the password to connect to the server"), TEXT(""), true);
@@ -171,12 +175,24 @@ FTPClientWrapper* FTPProfile::CreateWrapper() {
 		password = SU::strdup(m_password);
 	}
 
+	if (m_securityMode == Mode_SFTP && m_askPassphrase) {
+		InputDialog passDialog;
+		int ret = passDialog.Create(_MainOutputWindow, TEXT("Enter passphrase"), TEXT("Please enter the passphrase to decrypt private key:"), TEXT(""), true);
+		if (ret == 1) {
+			passphrase = SU::TCharToCP(passDialog.GetValue(), CP_ACP);
+		} else {
+			return NULL;
+		}
+	} else {
+		passphrase = m_passphrase;
+	}
+
 	switch(m_securityMode) {
 		case Mode_SFTP: {
 			FTPClientWrapperSSH * SSHwrapper = new FTPClientWrapperSSH(m_hostname, m_port, m_username, password);
 			wrapper = SSHwrapper;
 			SSHwrapper->SetKeyFile(m_keyFile);
-			SSHwrapper->SetPassphrase(m_passphrase);
+			SSHwrapper->SetPassphrase(passphrase);
 			SSHwrapper->SetUseAgent(m_useAgent);
 			SSHwrapper->SetAcceptedMethods(m_acceptedMethods);
 			break; }
@@ -394,6 +410,15 @@ int FTPProfile::SetPassphrase(const char * passphrase) {
 	return 0;
 }
 
+bool FTPProfile::GetAskPassphrase() const {
+	return m_askPassphrase;
+}
+
+int FTPProfile::SetAskPassphrase(bool askPassphrase) {
+	m_askPassphrase = askPassphrase;
+	return 0;
+}
+
 bool FTPProfile::GetUseAgent() const {
 	return m_useAgent;
 }
@@ -490,14 +515,19 @@ const TCHAR* FTPProfile::GetBinaryType(int i) {
 
 Transfer_Mode FTPProfile::GetFileTransferMode(const TCHAR* file) const {
 	LPCTSTR suffix = NULL;
+
+	if (m_asciiTypes.size()) {
 	suffix = PathFindSuffixArray(file, (const TCHAR**)(&m_asciiTypes[0]), m_asciiTypes.size());
 	if (suffix) {
 		return Mode_ASCII;
 	}
+	}
 
+	if (m_binTypes.size()) {
 	suffix = PathFindSuffixArray(file, (const TCHAR**)(&m_binTypes[0]), m_binTypes.size());
 	if (suffix) {
 		return Mode_Binary;
+	}
 	}
 
 	return m_transferMode;
@@ -645,6 +675,7 @@ FTPProfile* FTPProfile::LoadProfile(const TiXmlElement * profileElem) {
 			Encryption::FreeData(decryptphrase);
 		}
 
+		profileElem->Attribute("askPassphrase", (int*)(&profile->m_askPassphrase));
 		profileElem->Attribute("useAgent", (int*)(&profile->m_useAgent));
 		profileElem->Attribute("acceptedMethods", (int*)(&profile->m_acceptedMethods));
 
@@ -712,10 +743,11 @@ TiXmlElement* FTPProfile::SaveProfile() const {
 	profileElem->SetAttribute("keyFile", utf8keyfile);
 	SU::FreeChar(utf8keyfile);
 
-	char * encryptPhrase = Encryption::Encrypt(NULL, -1, m_passphrase, -1);
+	char * encryptPhrase = Encryption::Encrypt(NULL, -1, m_askPassphrase?"":m_passphrase, -1);
 	profileElem->SetAttribute("passphrase", encryptPhrase);
 	Encryption::FreeData(encryptPhrase);
 
+	profileElem->SetAttribute("askPassphrase", m_askPassphrase);
 	profileElem->SetAttribute("useAgent", m_useAgent?1:0);
 	profileElem->SetAttribute("acceptedMethods", (int)m_acceptedMethods);
 

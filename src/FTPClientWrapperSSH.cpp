@@ -243,7 +243,7 @@ int FTPClientWrapperSSH::ReceiveFile(const TCHAR * localfile, const char * ftpfi
 }
 
 int FTPClientWrapperSSH::ReceiveFile(HANDLE hFile, const char * ftpfile) {
-	int retcode = 0;
+	ssize_t retcode = 0;
 	int res = TRUE;
 	sftp_file sfile = NULL;
 	const int bufsize = 4096;
@@ -274,7 +274,7 @@ int FTPClientWrapperSSH::ReceiveFile(HANDLE hFile, const char * ftpfile) {
 
 	retcode = sftp_read(sfile, buf, bufsize);
 	while(retcode > 0 && !m_aborting) {
-		res = WriteFile(hFile, buf, retcode, &len, NULL);
+		res = WriteFile(hFile, buf, static_cast<DWORD>(retcode), &len, NULL);
 		if (res == FALSE)
 			break;
 
@@ -293,7 +293,7 @@ int FTPClientWrapperSSH::ReceiveFile(HANDLE hFile, const char * ftpfile) {
 }
 
 int FTPClientWrapperSSH::SendFile(HANDLE hFile, const char * ftpfile) {
-	int retcode = 0;
+	ssize_t retcode = 0;
 	int res = TRUE;
 	sftp_file sfile = NULL;
 	const int bufsize = 4096;
@@ -542,54 +542,28 @@ int FTPClientWrapperSSH::authenticate(ssh_session session) {
 }
 
 int FTPClientWrapperSSH::authenticate_key(ssh_session session) {
-	int rc;
-	int type = 0;
+	int rc = SSH_AUTH_ERROR;
 
 	char * keyfile = SU::TCharToCP(m_keyFile, CP_ACP);
-	ssh_private_key privkey = NULL;
-	if (m_passphrase[0] == 0)	//in case the passphrase is empty, use NULL instead
-		privkey = privatekey_from_file(session, keyfile, 0, NULL);
-	else
-		privkey = privatekey_from_file(session, keyfile, 0, m_passphrase);
+	ssh_key privkey = NULL;
+	//in case the passphrase is empty, use NULL instead
+	rc = ssh_pki_import_privkey_file(keyfile, m_passphrase[0] ? m_passphrase : NULL, NULL, NULL, &privkey);
 	SU::FreeChar(keyfile);
 
-	if (privkey == NULL)
+	if (rc == SSH_EOF) {
+		OutErr("[SFTP] Private key file not found or permission denied");
 		return SSH_AUTH_ERROR;
-
-	type = ssh_privatekey_type(privkey);
-	if (type == SSH_KEX) {
-		privatekey_free(privkey);
-		return SSH_AUTH_ERROR;
-	}
-
-	ssh_public_key pubkeyfrompriv = publickey_from_privatekey(privkey);
-	if (pubkeyfrompriv == NULL) {
-		privatekey_free(privkey);
+	} else if (rc != SSH_OK) {
+		OutErr("[SFTP] Invalid private key file or incorrect passphrase");
 		return SSH_AUTH_ERROR;
 	}
 
-	ssh_string pubstringkey = publickey_to_string(pubkeyfrompriv);
-	publickey_free(pubkeyfrompriv);
+	rc = ssh_userauth_publickey(session, m_username, privkey);
 
-
-	if (pubstringkey == NULL) {
-		privatekey_free(privkey);
-		return SSH_AUTH_ERROR;
-	}
-
-	if (pubstringkey == NULL || privkey == NULL)
-		return SSH_AUTH_ERROR;
-
-	rc = ssh_userauth_offer_pubkey(session, m_username, type, pubstringkey);
-	if (rc == SSH_AUTH_SUCCESS) {
-		rc = ssh_userauth_pubkey(session, m_username, pubstringkey, privkey);
-	}
-
-	privatekey_free(privkey);
-	ssh_string_free(pubstringkey);
+	ssh_key_free(privkey);
 
 	if (rc == SSH_AUTH_DENIED) {
-		OutMsg("[SFTP] Key authentication denied.");
+		OutErr("[SFTP] Key authentication denied.");
 	}
 
 	return rc;
@@ -650,6 +624,8 @@ int FTPClientWrapperSSH::verify_knownhost(ssh_session session) {
 		return -1;
 	}
 	
+	const char *keytype = ssh_key_type_to_char(ssh_key_type(srv_pubkey));
+
 	rc = ssh_get_publickey_hash(srv_pubkey, SSH_PUBLICKEY_HASH_SHA1, &hash, &hlen);
 	ssh_key_free(srv_pubkey);
 	if (rc < 0) {
@@ -668,15 +644,15 @@ int FTPClientWrapperSSH::verify_knownhost(ssh_session session) {
 			OutMsg("[SFTP] Creating known hosts file.");
 			/* fallback to SSH_SERVER_NOT_KNOWN behavior */
 		case SSH_SERVER_NOT_KNOWN: {
-			SU::TSprintf(errMessage, 512, TEXT("The server is unknown. Do you trust the host key\r\n%s ?"), hashHex);
+			SU::TSprintf(errMessage, 512, TEXT("The server is unknown. Do you trust the host key\r\n%s %s ?"), keytype, hashHex);
 			askSavekey = true;
 			break; }
 		case SSH_SERVER_KNOWN_CHANGED: {
-			SU::TSprintf(errMessage, 512, TEXT("The host key had changed, and is now: %s\r\nDo you trust this new host key?"), hashHex);
+			SU::TSprintf(errMessage, 512, TEXT("The host key had changed, and is now: %s %s\r\nDo you trust this new host key?"), keytype, hashHex);
 			askSavekey = true;
 			break; }
 		case SSH_SERVER_FOUND_OTHER:
-			SU::TSprintf(errMessage, 512, TEXT("A different type of host key was returned by the server than that was stored, and now reads: %s\r\nDo you trust this different host key?"), hashHex);
+			SU::TSprintf(errMessage, 512, TEXT("A different type of host key was returned by the server than that was stored, and now reads: %s %s\r\nDo you trust this different host key?"), keytype, hashHex);
 			askSavekey = true;
 			break;
 		case SSH_SERVER_ERROR:
