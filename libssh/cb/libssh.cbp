@@ -183,6 +183,9 @@
 		<Unit filename="../libssh/legacy.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../libssh/libcrypto-compat.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../libssh/libcrypto.c">
 			<Option compilerVar="CC" />
 		</Unit>

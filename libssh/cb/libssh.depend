@@ -806,7 +806,7 @@
 	<malloc.h>
 	<string.h>
 
-1435567655 source:d:\iti-projekte-nobak\synftp\libssh\libssh\agent.c
+1468589422 source:d:\iti-projekte-nobak\synftp\libssh\libssh\agent.c
 	"config.h"
 	<stdlib.h>
 	<errno.h>
@@ -828,9 +828,10 @@
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\agent.h
 	"libssh/libssh.h"
 
-1435572970 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libssh.h
+1539690332 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libssh.h
 	<unistd.h>
 	<inttypes.h>
+	<sys/types.h>
 	<winsock2.h>
 	<sys/select.h>
 	<netdb.h>
@@ -838,9 +839,12 @@
 
 1431435828 d:\iti-projekte-nobak\synftp\libssh\include\libssh\legacy.h
 
-1435159452 d:\iti-projekte-nobak\synftp\libssh\include\libssh\priv.h
+1539854333 d:\iti-projekte-nobak\synftp\libssh\include\libssh\priv.h
 	"config.h"
+	<stddef.h>
+	<byteswap.h>
 	<stdio.h>
+	<stdarg.h>
 	<unistd.h>
 	"libssh/libssh.h"
 	"libssh/callbacks.h"
@@ -853,7 +857,7 @@
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\socket.h
 	"libssh/callbacks.h"
 
-1431435828 d:\iti-projekte-nobak\synftp\libssh\include\libssh\buffer.h
+1494018095 d:\iti-projekte-nobak\synftp\libssh\include\libssh\buffer.h
 	<stdarg.h>
 	"libssh/libssh.h"
 
@@ -870,14 +874,14 @@
 	"libssh/priv.h"
 	"libssh/callbacks.h"
 
-1431435828 d:\iti-projekte-nobak\synftp\libssh\include\libssh\packet.h
+1539690203 d:\iti-projekte-nobak\synftp\libssh\include\libssh\packet.h
 	"libssh/wrapper.h"
 
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\pcap.h
 	"config.h"
 	"libssh/libssh.h"
 
-1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\auth.h
+1539690203 d:\iti-projekte-nobak\synftp\libssh\include\libssh\auth.h
 	"config.h"
 	"libssh/callbacks.h"
 
@@ -895,15 +899,15 @@
 	"libssh/crypto.h"
 	"libssh/ed25519.h"
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ec.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ec.h
 	<openssl/opensslconf.h>
 	<openssl/asn1.h>
 	<openssl/symhacks.h>
 	<openssl/bn.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\opensslconf.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\opensslconf.h
 
-1427274103 d:\iti-projekte-nobak\synftp\include\openssl\asn1.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\asn1.h
 	<time.h>
 	<openssl/e_os2.h>
 	<openssl/bio.h>
@@ -913,11 +917,11 @@
 	<openssl/ossl_typ.h>
 	<openssl/bn.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\e_os2.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\e_os2.h
 	<openssl/opensslconf.h>
 	<sys/socket.h>
 
-1427274103 d:\iti-projekte-nobak\synftp\include\openssl\bio.h
+1515609077 d:\iti-projekte-nobak\synftp\include\openssl\bio.h
 	<openssl/e_os2.h>
 	<stdio.h>
 	<stdarg.h>
@@ -925,7 +929,7 @@
 	<stdint.h>
 	<inttypes.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\crypto.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\crypto.h
 	<stdlib.h>
 	<openssl/e_os2.h>
 	<stdio.h>
@@ -936,30 +940,31 @@
 	<openssl/ebcdic.h>
 	<openssl/symhacks.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\stack.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\stack.h
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\safestack.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\safestack.h
 	<openssl/stack.h>
 
-1427274103 d:\iti-projekte-nobak\synftp\include\openssl\opensslv.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\opensslv.h
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ossl_typ.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ossl_typ.h
 	<openssl/e_os2.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ebcdic.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ebcdic.h
 	<sys/types.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\symhacks.h
+1534318993 d:\iti-projekte-nobak\synftp\include\openssl\symhacks.h
 	<openssl/e_os2.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\bn.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\bn.h
+	<limits.h>
 	<openssl/e_os2.h>
 	<stdio.h>
 	<openssl/ossl_typ.h>
 	<openssl/crypto.h>
 	<assert.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ecdsa.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ecdsa.h
 	<openssl/opensslconf.h>
 	<openssl/ec.h>
 	<openssl/ossl_typ.h>
@@ -991,7 +996,7 @@
 	<openssl/bn.h>
 	<openssl/opensslv.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\dsa.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\dsa.h
 	<openssl/e_os2.h>
 	<openssl/bio.h>
 	<openssl/crypto.h>
@@ -999,32 +1004,32 @@
 	<openssl/bn.h>
 	<openssl/dh.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\dh.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\dh.h
 	<openssl/e_os2.h>
 	<openssl/bio.h>
 	<openssl/ossl_typ.h>
 	<openssl/bn.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\rsa.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\rsa.h
 	<openssl/asn1.h>
 	<openssl/bio.h>
 	<openssl/crypto.h>
 	<openssl/ossl_typ.h>
 	<openssl/bn.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\sha.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\sha.h
 	<openssl/e_os2.h>
 	<stddef.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\md5.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\md5.h
 	<openssl/e_os2.h>
 	<stddef.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\hmac.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\hmac.h
 	<openssl/opensslconf.h>
 	<openssl/evp.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\evp.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\evp.h
 	<openssl/opensslconf.h>
 	<openssl/opensslconf.h>
 	<openssl/ossl_typ.h>
@@ -1032,18 +1037,18 @@
 	<openssl/bio.h>
 	<openssl/objects.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\objects.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\objects.h
 	<openssl/obj_mac.h>
 	<openssl/bio.h>
 	<openssl/asn1.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\obj_mac.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\obj_mac.h
 
 1431435828 d:\iti-projekte-nobak\synftp\libssh\include\libssh\libgcrypt.h
 	"config.h"
 	<gcrypt.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ecdh.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ecdh.h
 	<openssl/opensslconf.h>
 	<openssl/ec.h>
 	<openssl/ossl_typ.h>
@@ -1057,8 +1062,9 @@
 	"libssh.h"
 	<nacl/crypto_scalarmult_curve25519.h>
 
-1431344263 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth1.c
+1494018095 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth1.c
 	"config.h"
+	<errno.h>
 	<string.h>
 	<stdlib.h>
 	"libssh/priv.h"
@@ -1157,10 +1163,11 @@
 	"libssh/crypto.h"
 	"libssh/session.h"
 
-1410359753 d:\iti-projekte-nobak\synftp\zlib\zlib.h
+1494018096 d:\iti-projekte-nobak\synftp\zlib\zlib.h
 	"zconf.h"
 
-1410359753 d:\iti-projekte-nobak\synftp\zlib\zconf.h
+1494018096 d:\iti-projekte-nobak\synftp\zlib\zconf.h
+	<stddef.h>
 	<windows.h>
 	<limits.h>
 	<sys/types.h>
@@ -1182,7 +1189,7 @@
 	<libssh/libssh.h>
 	<libssh/callbacks.h>
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex1.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex1.c
 	"config.h"
 	<arpa/inet.h>
 	"libssh/priv.h"
@@ -1193,6 +1200,7 @@
 	"libssh/session.h"
 	"libssh/ssh1.h"
 	"libssh/wrapper.h"
+	"libcrypto-compat.h"
 
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\keys.h
 	"config.h"
@@ -1219,7 +1227,7 @@
 1431435828 d:\iti-projekte-nobak\synftp\libssh\include\libssh\pki_priv.h
 	"libssh/pki.h"
 
-1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\misc.h
+1494018095 d:\iti-projekte-nobak\synftp\libssh\include\libssh\misc.h
 
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\options.h
 
@@ -1296,7 +1304,7 @@
 	"libssh/crypto.h"
 	"libssh/buffer.h"
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\blowfish.h
+1515609077 d:\iti-projekte-nobak\synftp\include\openssl\blowfish.h
 	<openssl/e_os2.h>
 
 1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pcap.c
@@ -1327,7 +1335,7 @@
 
 1431344263 d:\iti-projekte-nobak\synftp\libssh\include\libssh\scp.h
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftpserver.c
+1494018096 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftpserver.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
@@ -1350,7 +1358,7 @@
 	"libssh/crypto.h"
 	"libssh/threads.h"
 
-1435572686 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\auth.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -1407,7 +1415,7 @@
 	<malloc.h>
 	<string.h>
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\buffer.c
+1494018095 source:d:\iti-projekte-nobak\synftp\libssh\libssh\buffer.c
 	<limits.h>
 	<stdlib.h>
 	<string.h>
@@ -1419,7 +1427,7 @@
 	"libssh/misc.h"
 	"libssh/bignum.h"
 
-1435567828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\channels.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\channels.c
 	<limits.h>
 	<string.h>
 	<stdlib.h>
@@ -1456,7 +1464,7 @@
 	"libssh/session.h"
 	"libssh/misc.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\client.c
+1494018095 source:d:\iti-projekte-nobak\synftp\libssh\libssh\client.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -1476,7 +1484,7 @@
 	"libssh/pki.h"
 	"libssh/kex.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\config.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\config.c
 	"config.h"
 	<ctype.h>
 	<stdio.h>
@@ -1510,7 +1518,7 @@
 	"libssh/session.h"
 	"libssh/poll.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\dh.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\dh.c
 	"config.h"
 	<stdio.h>
 	<stdlib.h>
@@ -1532,13 +1540,13 @@
 	<openssl/evp.h>
 	<openssl/err.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\rand.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\rand.h
 	<stdlib.h>
 	<openssl/ossl_typ.h>
 	<openssl/e_os2.h>
 	<windows.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\err.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\err.h
 	<openssl/e_os2.h>
 	<stdio.h>
 	<stdlib.h>
@@ -1547,12 +1555,12 @@
 	<openssl/lhash.h>
 	<errno.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\lhash.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\lhash.h
 	<openssl/e_os2.h>
 	<stdio.h>
 	<openssl/bio.h>
 
-1435159448 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex.c
+1442417476 source:d:\iti-projekte-nobak\synftp\libssh\libssh\kex.c
 	"config.h"
 	<string.h>
 	<stdlib.h>
@@ -1590,7 +1598,7 @@
 	<netinet/in.h>
 	<arpa/inet.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pem.h
+1534324106 d:\iti-projekte-nobak\synftp\include\openssl\pem.h
 	<openssl/e_os2.h>
 	<openssl/bio.h>
 	<openssl/stack.h>
@@ -1599,7 +1607,7 @@
 	<openssl/pem2.h>
 	<openssl/symhacks.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\x509.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\x509.h
 	<openssl/e_os2.h>
 	<openssl/symhacks.h>
 	<openssl/buffer.h>
@@ -1619,12 +1627,12 @@
 	<openssl/x509_vfy.h>
 	<openssl/pkcs7.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\buffer.h
+1515609077 d:\iti-projekte-nobak\synftp\include\openssl\buffer.h
 	<openssl/ossl_typ.h>
 	<stddef.h>
 	<sys/types.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\x509_vfy.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\x509_vfy.h
 	<openssl/x509.h>
 	<openssl/opensslconf.h>
 	<openssl/lhash.h>
@@ -1632,16 +1640,16 @@
 	<openssl/crypto.h>
 	<openssl/symhacks.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pkcs7.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\pkcs7.h
 	<openssl/asn1.h>
 	<openssl/bio.h>
 	<openssl/e_os2.h>
 	<openssl/symhacks.h>
 	<openssl/ossl_typ.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\pem2.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\pem2.h
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libcrypto.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libcrypto.c
 	"config.h"
 	<stdlib.h>
 	<stdio.h>
@@ -1659,34 +1667,36 @@
 	<openssl/hmac.h>
 	<openssl/opensslv.h>
 	<openssl/rand.h>
+	<openssl/modes.h>
+	"libcrypto-compat.h"
 	<openssl/aes.h>
 	<openssl/blowfish.h>
 	<openssl/des.h>
 	"libssh/crypto.h"
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\aes.h
+1515609077 d:\iti-projekte-nobak\synftp\include\openssl\aes.h
 	<openssl/opensslconf.h>
 	<stddef.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\des.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\des.h
 	<openssl/e_os2.h>
 	<openssl/des_old.h>
 
-1422020233 d:\iti-projekte-nobak\synftp\include\openssl\des_old.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\des_old.h
 	<openssl/e_os2.h>
 	<openssl/symhacks.h>
 	<openssl/ui_compat.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ui_compat.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ui_compat.h
 	<openssl/opensslconf.h>
 	<openssl/ui.h>
 
-1422020234 d:\iti-projekte-nobak\synftp\include\openssl\ui.h
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\ui.h
 	<openssl/crypto.h>
 	<openssl/safestack.h>
 	<openssl/ossl_typ.h>
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libgcrypt.c
+1468589422 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libgcrypt.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -1696,7 +1706,7 @@
 	"libssh/wrapper.h"
 	<gcrypt.h>
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\messages.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\messages.c
 	"config.h"
 	<string.h>
 	<stdlib.h>
@@ -1716,7 +1726,7 @@
 	"libssh/server.h"
 	"libssh/gssapi.h"
 
-1435167370 source:d:\iti-projekte-nobak\synftp\libssh\libssh\options.c
+1494018096 source:d:\iti-projekte-nobak\synftp\libssh\libssh\options.c
 	"config.h"
 	<stdio.h>
 	<stdlib.h>
@@ -1731,7 +1741,7 @@
 	"libssh/server.h"
 	"libssh/bind.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\packet.c
 	"config.h"
 	<stdlib.h>
 	<stdio.h>
@@ -1770,7 +1780,7 @@
 	"libssh/ssh2.h"
 	"libssh/curve25519.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki.c
 	"config.h"
 	<errno.h>
 	<ctype.h>
@@ -1789,12 +1799,13 @@
 	"libssh/misc.h"
 	"libssh/agent.h"
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_crypto.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_crypto.c
 	"libssh/priv.h"
 	<openssl/pem.h>
 	<openssl/dsa.h>
 	<openssl/err.h>
 	<openssl/rsa.h>
+	"libcrypto-compat.h"
 	<openssl/ec.h>
 	<openssl/ecdsa.h>
 	"libssh/libssh.h"
@@ -1804,7 +1815,7 @@
 	"libssh/pki_priv.h"
 	"libssh/bignum.h"
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_gcrypt.c
+1468589422 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_gcrypt.c
 	"config.h"
 	<string.h>
 	<stdlib.h>
@@ -1818,7 +1829,7 @@
 	"libssh/pki.h"
 	"libssh/pki_priv.h"
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\server.c
+1442417476 source:d:\iti-projekte-nobak\synftp\libssh\libssh\server.c
 	"config.h"
 	<errno.h>
 	<fcntl.h>
@@ -1845,7 +1856,7 @@
 	"libssh/options.h"
 	"libssh/curve25519.h"
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\session.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\session.c
 	"config.h"
 	<string.h>
 	<stdlib.h>
@@ -1854,6 +1865,7 @@
 	"libssh/crypto.h"
 	"libssh/server.h"
 	"libssh/socket.h"
+	"libssh/ssh1.h"
 	"libssh/ssh2.h"
 	"libssh/agent.h"
 	"libssh/packet.h"
@@ -1862,7 +1874,7 @@
 	"libssh/buffer.h"
 	"libssh/poll.h"
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftp.c
+1494018096 source:d:\iti-projekte-nobak\synftp\libssh\libssh\sftp.c
 	<errno.h>
 	<ctype.h>
 	<fcntl.h>
@@ -1919,7 +1931,7 @@
 	<stdlib.h>
 	<pthread.h>
 
-1431435829 source:d:\iti-projekte-nobak\synftp\libssh\libssh\wrapper.c
+1468589422 source:d:\iti-projekte-nobak\synftp\libssh\libssh\wrapper.c
 	"config.h"
 	<stdlib.h>
 	<stdio.h>
@@ -1931,7 +1943,7 @@
 	"libssh/wrapper.h"
 	"libssh/pki.h"
 
-1435167368 source:d:\iti-projekte-nobak\synftp\libssh\libssh\poll.c
+1438676087 source:d:\iti-projekte-nobak\synftp\libssh\libssh\poll.c
 	"config.h"
 	<errno.h>
 	<stdlib.h>
@@ -1959,7 +1971,7 @@
 	"libssh/libcrypto.h"
 	"libssh/libgcrypt.h"
 
-1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\bignum.c
+1442417476 source:d:\iti-projekte-nobak\synftp\libssh\libssh\bignum.c
 	<stdio.h>
 	"libssh/priv.h"
 	"libssh/bignum.h"
@@ -1975,7 +1987,7 @@
 	"libssh/pki_priv.h"
 	"libssh/buffer.h"
 
-1435167368 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_ed25519.c
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\pki_ed25519.c
 	"libssh/pki.h"
 	"libssh/pki_priv.h"
 	"libssh/ed25519.h"
@@ -2033,4 +2045,36 @@
 1431435828 source:d:\iti-projekte-nobak\synftp\libssh\libssh\external\sc25519.c
 	"libssh/priv.h"
 	"libssh/sc25519.h"
+
+1536561409 d:\iti-projekte-nobak\synftp\libssh\libssh\libcrypto-compat.h
+	<openssl/opensslv.h>
+	<openssl/rsa.h>
+	<openssl/dsa.h>
+	<openssl/ecdsa.h>
+	<openssl/dh.h>
+	<openssl/evp.h>
+	<openssl/hmac.h>
+
+1539690203 source:d:\iti-projekte-nobak\synftp\libssh\libssh\libcrypto-compat.c
+	<string.h>
+	<openssl/engine.h>
+	"libcrypto-compat.h"
+
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\engine.h
+	<openssl/opensslconf.h>
+	<openssl/bn.h>
+	<openssl/rsa.h>
+	<openssl/dsa.h>
+	<openssl/dh.h>
+	<openssl/ecdh.h>
+	<openssl/ecdsa.h>
+	<openssl/rand.h>
+	<openssl/ui.h>
+	<openssl/err.h>
+	<openssl/ossl_typ.h>
+	<openssl/symhacks.h>
+	<openssl/x509.h>
+
+1515609078 d:\iti-projekte-nobak\synftp\include\openssl\modes.h
+	<stddef.h>
 
